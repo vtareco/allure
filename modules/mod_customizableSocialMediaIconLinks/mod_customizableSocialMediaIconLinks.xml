@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Customizable Social Media Icon Links</name>
+	<author>Ved Maila</author>
+	<creationDate>January 2014</creationDate>
+	<copyright>All rights reserved by ConnexDesigns.COM.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@connexdesigns.com</authorEmail>
+	<authorUrl>www.connexdesigns.com</authorUrl>
+	<version>1.0</version>
+	<description>
+	<![CDATA[
+		<style type="text/css">
+			span.readonly { padding: 10px; font-family: Arial; font-size:13px !important; font-weight: normal !important; text-align: justify; color: #4d4d4d; line-height: 24px; }
+			span.readonly h1 { clear:both; font-family: Georgia, sans-serif; font-size:38px; margin:30px 20px 23px; padding:0px 0px 24px 10px; color:#333; border-bottom: 1px solid #eee; font-weight: normal; }
+			span.readonly p { margin: 0 26px 10px }
+			span.readonly p a { color: #2F4C6D }
+			span.readonly p.homepage { margin-top: 30px }
+			span.readonly p.license { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
+		</style>	
+		<span class="readonly"><h1>Customizable Social Media Icon Links<small>ver. 1.0</small></h1><p>
+		Thanks for downloading Customizable Social Media Icon Links. Please rate us on Joomla Extensions Directory if you have liked our module.</p>	
+		<p class="license">Customizable Social Media Icon Links is released under the <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GNU/GPL v2 license.</a></p></span></span>
+	]]>
+	</description>
+	<files>
+		<filename module="mod_customizableSocialMediaIconLinks">mod_customizableSocialMediaIconLinks.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_customizableSocialMediaIconLinks.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="backgroundColor"
+					type="color"
+					default="#1e9f75"
+					label="Background Color"
+					description="Active Default Background color for the icons" />
+				<field
+					name="width"
+					type="text"
+					default="400"
+					label="Width"
+					description="Module width in px" />
+				<field
+					name="margin"
+					type="text"
+					default="3"
+					label="Margin"
+					description="Margin between icons in px" />
+				<field
+					name="borderRadius"
+					type="text"
+					default="5"
+					label="Border Radius"
+					description="Border Radius of icons in px" />
+				<field
+					name="facebook"
+					type="text"
+					default=""
+					label="Facebook"
+					description="Facebook" />
+				<field
+					name="twitter"
+					type="text"
+					default=""
+					label="Twitter"
+					description="Twitter Link" />
+				<field
+					name="youtube"
+					type="text"
+					default=""
+					label="Youtube"
+					description="Youtube Link" />
+				<field
+					name="linkedin"
+					type="text"
+					default=""
+					label="Linkedin"
+					description="Linkedin Link" />	
+				<field
+					name="email"
+					type="text"
+					default=""
+					label="Email"
+					description="Email Link" />
+				<field
+					name="dropbox"
+					type="text"
+					default=""
+					label="Dropbox"
+					description="Dropbox Link" />
+				<field
+					name="pinterest"
+					type="text"
+					default=""
+					label="Pinterest"
+					description="Pinterest Link" />
+				<field
+					name="myspace"
+					type="text"
+					default=""
+					label="Myspace"
+					description="Myspace Link" />
+				<field
+					name="skype"
+					type="text"
+					default=""
+					label="Skype"
+					description="Skype Link" />
+				<field
+					name="soundcloud"
+					type="text"
+					default=""
+					label="Soundcloud"
+					description="Soundcloud Link" />
+				<field
+					name="vimeo"
+					type="text"
+					default=""
+					label="Vimeo"
+					description="Vimeo Link" />
+				<field
+					name="wordpress"
+					type="text"
+					default=""
+					label="Wordpress"
+					description="Wordpress Link" />
+				<field
+					name="googlePlus"
+					type="text"
+					default=""
+					label="Google Plus"
+					description="Google Plus Link" />
+				<field
+					name="yahoo"
+					type="text"
+					default=""
+					label="Yahoo"
+					description="Yahoo Link" />
+				<field
+					name="reddit"
+					type="text"
+					default=""
+					label="Reddit"
+					description="Reddit Link" />
+				<field
+					name="rss"
+					type="text"
+					default=""
+					label="RSS"
+					description="Rss Link" />
+				<field
+					name="digg"
+					type="text"
+					default=""
+					label="Digg"
+					description="Digg Link" />
+				<field
+					name="tumblr"
+					type="text"
+					default=""
+					label="Tumblr"
+					description="Tumblr Link" />
+				<field
+					name="delicious"
+					type="text"
+					default=""
+					label="Delicious"
+					description="Delicious Link" />
+				<field
+					name="flickr"
+					type="text"
+					default=""
+					label="Flickr"
+					description="Flickr Link" />
+				<field
+					name="amazon"
+					type="text"
+					default=""
+					label="Amazon"
+					description="Amazon Link" />
+				<field
+					name="bing"
+					type="text"
+					default=""
+					label="Bing"
+					description="Bing Link" />
+				<field
+					name="share"
+					type="text"
+					default=""
+					label="Share"
+					description="Share Link" />		
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="Module Class Suffix"
+					description="Module Class Suffix" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

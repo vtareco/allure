@@ -1,0 +1,91 @@
+<?php
+/**
+ * @package     Joomla.Administrator
+ * @subpackage  mod_submenu
+ *
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+global $my;
+
+$component = $_GET['option'];
+if($component == '')
+	$component = $_POST['option'];
+if(is_array($my->groups))	
+	$is_admin = in_array(7,$my->groups);
+
+?>
+<div id="sidebar">
+	<div class="sidebar-nav">
+		<?php if ($displayMenu) : ?>
+		<ul id="submenu" class="nav nav-list">
+			<?php foreach ($list as $item) : ?>
+			
+			
+			<?php 
+			//CMS @ 25-06-2015
+			//Controla o acesso aos submenus do Menu Newsletter
+			if(
+				!$is_admin && $component == 'com_jnews' && $item[0] == 'About'
+				):
+				continue;
+			endif;
+			?>
+			
+			
+			<?php
+			//CMS @ 10-04-2015 + VMT @ 29-12-2015
+			//Controla o acesso aos submenus dos controladores de acordo com o utilizador logado
+			
+			if($item[0] == "Sale Manager")
+				$item[0] = "For Sale";
+				
+			if(
+				 $is_admin ||
+				 ($component == "com_realestatemanager" && ( $item[0] == "Villas" || $item[0] == "Facilities" || $item[0] == "For Sale" ) ) ||
+				 ($component != "com_realestatemanager")
+				): ?>
+			<?php if (isset ($item[2]) && $item[2] == 1) : ?>
+				<li class="active">
+			<?php else : ?>
+				<li>
+			<?php endif; ?>
+			<?php if ($hide) : ?>
+				<a class="nolink"><?php echo $item[0]; ?></a>
+			<?php else : ?>
+				<?php if (strlen($item[1])) : ?>
+					<a href="<?php echo JFilterOutput::ampReplace($item[1]); ?>"><?php echo $item[0]; ?></a>
+				<?php else : ?>
+					<?php echo $item[0]; ?>
+				<?php endif; ?>
+			<?php endif; ?>
+			</li>
+			<?php endif; ?>
+			<?php endforeach; ?>
+		</ul>
+		<?php endif; ?>
+		<?php if ($displayMenu && $displayFilters) : ?>
+		<hr />
+		<?php endif; ?>
+		<?php if ($displayFilters) : ?>
+		<div class="filter-select hidden-phone">
+			<h4 class="page-header"><?php echo JText::_('JSEARCH_FILTER_LABEL'); ?></h4>
+			<form action="<?php echo JRoute::_($action); ?>" method="post">
+				<?php foreach ($filters as $filter) : ?>
+					<label for="<?php echo $filter['name']; ?>" class="element-invisible"><?php echo $filter['label']; ?></label>
+					<select name="<?php echo $filter['name']; ?>" id="<?php echo $filter['name']; ?>" class="span12 small" onchange="this.form.submit()">
+						<?php if (!$filter['noDefault']) : ?>
+							<option value=""><?php echo $filter['label']; ?></option>
+						<?php endif; ?>
+						<?php echo $filter['options']; ?>
+					</select>
+					<hr class="hr-condensed" />
+				<?php endforeach; ?>
+			</form>
+		</div>
+		<?php endif; ?>
+	</div>
+</div>

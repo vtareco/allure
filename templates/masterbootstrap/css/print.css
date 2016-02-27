@@ -1,0 +1,50 @@
+#top, #header-top, #top-header-languages, #header-central-messages, #top-search, #navigation, #copyright, #footer{
+    display: none !important;
+}
+
+.container, #main .main-box, .main-box, #container {
+    background-color: #ffffff !important;
+}
+
+.table_56{
+    float: left;
+    margin-top: 25px;
+}
+
+.table_56 td {
+    padding-top: 15px;
+    vertical-align: top;
+}
+
+.first_td {
+    display:none;
+}
+
+#house-photo-div {
+    position: relative !important;
+    float: left;
+    width: 300px !important;
+}
+
+    #house_basic_details{
+        position: relative !important;
+        height: auto !important;
+        padding-left: 30px !important;
+        width: 100% !important;
+        margin-top: 0px !important;
+        margin-right: auto !important;
+        min-height: 50px !important;
+    }
+
+.house-photo-td{
+    width: 350px;
+}
+
+
+#map_canvas {
+    margin-top: 0 !important;
+    top: 0 !important;
+    padding-top: 0 !important;
+}
+
+

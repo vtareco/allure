@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>Unite Language Switcher</name>
+	<author>Unite CMS</author>
+	<creationDate>December 2012</creationDate>
+	<copyright>Copyright (C) 2012 Unite CMS. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>contact@unitecms.net</authorEmail>
+	<authorUrl>www.unitecms.net</authorUrl>
+	<version>1.0.3</version>
+	<description>Show the advanced language switcher</description>
+	
+	<languages>
+		<language tag="en-GB">en-GB.mod_uniteswitcher.ini</language>
+	</languages>
+	
+	<files>
+		<filename module="mod_uniteswitcher">mod_uniteswitcher.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_uniteswitcher.xml</filename>
+	</files>
+	
+	<config>
+		<fieldset>
+			<field name="language"
+				type="list"
+				description="JFIELD_MODULE_LANGUAGE_DESC"
+				label="JFIELD_LANGUAGE_LABEL">
+				<option value="*">JALL</option>
+			</field>
+		</fieldset>
+		<fields name="params">
+			<fieldset name="basic">
+			
+				<field
+					name="color_template"
+					type="list"
+					default="transparent"
+					label="MOD_UNITESWITCHER_COLOR_TEMPLATE"
+					description="">
+					<option value="transparent">Transparent</option>
+					<option value="red">Red</option>
+					<option value="blue">Blue</option>
+					<option value="green">Green</option>
+				</field>
+				
+				<field
+					name="header_text"
+					type="textarea"
+					filter="safehtml"
+					rows="3"
+					cols="40"
+					label="MOD_UNITESWITCHER_COLOR_HEADER_TEXT"
+					description="MOD_UNITESWITCHER_COLOR_HEADER_TEXT_DESC" />
+
+				<field
+					name="footer_text"
+					type="textarea"
+					filter="safehtml"
+					rows="3"
+					cols="40"
+					label="MOD_UNITESWITCHER_FOOTER_TEXT"
+					description="MOD_UNITESWITCHER_FOOTER_TEXT_DESC" />
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="MOD_LANGUAGES_FIELD_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+					
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

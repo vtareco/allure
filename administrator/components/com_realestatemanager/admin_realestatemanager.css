@@ -1,0 +1,359 @@
+/**
+*
+* @package  RealEstateManager
+* @copyright 2012 Andrey Kvasnevskiy-OrdaSoft(akbet@mail.ru); Rob de Cleen(rob@decleen.com); 
+* Homepage: http://www.joomlawebserver.com
+* @version: 2.2 Pro
+*
+**/
+*:hover, 
+*:active,
+*:focus,
+*:visited,
+*:link{outline: none;}
+a img{border: none;}
+h1{
+    color:#4f4f4f;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+hr {
+    border-color: #CECECE -moz-use-text-color #FFFFFF !important;
+    border-style: solid !important;
+    border-width: 1px 0 !important;
+    margin: 20px 0 !important;
+    width: 98%;
+}
+select {
+    background-color: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 9px;
+    padding: 4px 5px 4px 3px;
+    width: 223px;
+}
+textarea {
+    min-height: 100px !important;
+    min-width: 300px !important;
+}
+textarea, 
+input.inputbox, 
+input[type="date"], 
+input[type="month"], 
+input[type="time"], 
+input[type="week"], 
+input[type="number"], 
+input[type="email"], 
+input[type="search"], 
+input[type="color"]{
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+textarea, 
+input.inputbox, 
+input[type="date"], 
+input[type="month"], 
+input[type="time"], 
+input[type="week"], 
+input[type="number"], 
+input[type="email"], 
+input[type="search"], 
+input[type="color"]{
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 9px;
+    padding: 4px 6px;
+    width: 210px;
+}
+#toolbar-custom .toolbar {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #F5F5F5;
+    	background-color: #f5f5f5;
+	background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+	background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+	background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe5e5e5', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+    cursor: pointer;
+    display: inline-block;
+    color: #333333;
+    font-size: 13px;
+    margin-bottom: 0;
+    padding: 2px 7px;
+    text-align: center;
+    vertical-align: middle;
+	display:none;
+}
+#toolbar-custom .toolbar img {
+    float: left;
+    height: 16px;
+    margin: 2px 2px 1px 0;
+    width: 16px;
+}
+#toolbar-custom .toolbar:hover {
+    background-color: #E6E6E6;
+    background-position: 0 -15px;
+    color: #0088CC;
+    text-decoration: none;
+    transition: background-position 0.1s linear 0s;
+}
+#search_languages,
+#search_sys_type {
+    width: 154px;
+}
+.adminlist {
+    border-collapse: separate;
+    border-spacing: 2px;
+    width: 100%;
+
+}
+.list_04 select#pub,
+.list_04 select#rent,
+.list_04 select#owner,
+.list_04 select#catid {
+    width: 155px;
+}
+.adminlist,
+.adminlist tr th,
+.adminlist tr td {
+    border: 1px solid #f2f2f2;
+}
+.adminlist tr:hover {
+    background-color: #EFEFEF;
+}
+.tabs .closed {
+    background: #F5F5F5;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+    background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+    background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+    background-repeat: repeat-x;
+    border-color: #D3D3D3 #D3D3D3 #EEEEEE;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 -1px 0 0;
+    color: #909090;
+    font-size: 12px;
+    height: 40px;
+    font-weight: normal;
+    padding: 0 10px;
+    text-align: center;
+}
+.tabs .open {
+    background: url("images/tab_li_arrow.png") no-repeat scroll center top #F8F8F8 !important;
+    border-color: #3399FF #D3D3D3 #F8F8F8 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    box-shadow: 0 -3px 5px rgba(50, 50, 50, 0.11);
+    color: #333333 !important;
+    margin: 2px 0 0;
+    height: 40px;
+    padding: 0 10px;
+    text-align: center; 
+}
+.tabs .closed span,
+.tabs .open span {
+    display: block;
+}
+.tabs dt {
+    float: left;
+}
+.tabs dt.closed a {
+    color: #909090;
+}
+.tabs dt a:hover {
+    text-decoration: none;
+}
+.tabs h3 {
+    font-size: 12px !important;
+    font-weight: normal;
+    margin: 10px 0 0;
+    white-space: nowrap;
+}
+.adminform {
+    font-size: 14px;
+}
+
+.development {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+}
+dd {
+    margin: 0 !important;
+}
+table {
+    display: block;
+    clear: both;
+}
+#configurePane {
+    overflow: hidden;
+}
+.controls label {
+    margin: 0 20px 0 5px;
+    padding: 0 !important;
+}
+.controls input {
+    margin: 0 4px 0 0 !important;
+}
+input[name="foto_high"],
+input[name="foto_width"],
+input[name="fotoupload_high"],
+input[name="fotoupload_width"],
+input[name="fotogallery_high"],
+input[name="fotogallery_width"],
+.form_18 input[name="fotomain_high"],
+.form_18 input[name="fotomain_width"] {
+    width: 93px;
+}
+.form_10 .btn-group .btn {
+    margin: 9px 25px 0 0;
+}
+.form_10 input[name="price"], 
+.form_10 #priceunit {
+    width: 99px;
+}
+input[type="submit"], 
+input[type="button"] {
+    color: #fff!important;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #006dcc!important;
+    background-image: -moz-linear-gradient(top,#08c,#0044cc)!important;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#0044cc))!important;
+    background-image: -webkit-linear-gradient(top,#08c,#0044cc)!important;
+    background-image: -o-linear-gradient(top,#08c,#0044cc)!important;
+    background-image: linear-gradient(to bottom,#08c,#0044cc)!important;
+    background-repeat: repeat-x!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0043cc', GradientType=0)!important;
+    border-color: #0044cc #0044cc #002a80!important;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25)!important;
+    *background-color: #0044cc!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05) !important;
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05) !important;
+    border: 1px solid !important;
+    cursor: pointer !important;
+    font-family: arial !important;
+    font-size: 13px;
+    font-weight: normal !important;
+    letter-spacing: 1px;
+    padding: 7px 14px !important;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+input[type="submit"]:hover, 
+input[type="button"]:hover {
+    -moz-transition: background-position 0.1s linear 0s !important;
+    background-color: #0044CC !important;
+    text-decoration: none;
+    background-position: 0 -15px !important;
+    color: #ffffff !important;
+}
+.house_categories {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0 0;
+}
+.checkbox_rel {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border: 1px solid #D6D6D6;
+    margin: 4px 0;
+    overflow: hidden;
+    padding: 4px;
+    width: 235px;
+}
+.checkbox_rel input {
+    float: left !important;
+    margin: 0 5px !important;
+}
+.house_feature {
+    display: block;
+    font-size: 14px;
+}
+.form_11 #expiration_date {
+    width: 167px;
+}
+#map_canvas{
+    border: 1px solid #D6D6D6;
+    float: left;
+    height: 300px;
+    margin: 10px 0;
+    width: 80%;
+}
+.form_21 #view_house {
+    width: 140px;
+}
+.form_21 #layout_all_houses {
+    width: 140px;
+}
+div.current label, div.current span.faux-label {
+    clear: right !important;
+    margin-top: 4px !important;
+    min-width: 90px !important;
+}
+.adminform.form_14 input {
+      float: none !important;
+}
+#editor-xtd-buttons {
+    margin-top: 10px;
+}
+#editor-xtd-buttons {
+padding-top: 40px!important;
+}
+#description_tbl {
+  width: 391px !important;
+}
+.slash {
+    display: block;
+    float: left;
+    margin: 7px 5px;
+}
+#patt {
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 16px;
+    padding: 5px 6px;
+    width: 140px;
+}
+
+input[type="radio"] {
+      margin-left: 20px;
+      width: 15px !important;
+}
+.tabs.panel_4_configurePane.closed,
+.tabs.panel_4_configurePane.open {
+width: 115px;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5">
+<name>POWr Social Media Icons</name>
+<author>POWr.io</author>
+<creationDate>Jan 2015</creationDate>
+<version>2.0.0</version>
+<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+<authorEmail>info@powr.io</authorEmail>
+<authorUrl>http://powr.io</authorUrl>
+<packagename>POWr Social Media Icons</packagename>
+<packager>POWr.io</packager>
+<packagerurl>http://www.powr.io/</packagerurl>
+<description>Create custom icons for Facebook, Twitter, Instagram, and more!</description>
+<files folder="packages">
+  <file type="module" client="site">mod_POWrSocialMediaIcons.zip</file>
+  <file type="plugin" group="client">plg_POWrShortcodes.zip</file>
+</files>
+</extension>

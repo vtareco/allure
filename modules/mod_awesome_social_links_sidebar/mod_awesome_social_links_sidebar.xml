@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.1"
+	client="site"
+	method="upgrade">
+	<name>Awesome Social Links Sidebar</name>
+	<author>Ved Maila</author>
+	<creationDate>March 2014</creationDate>
+	<copyright>All rights reserved by ConnexDesigns.com</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@connexdesigns.com</authorEmail>
+	<authorUrl>www.atomixstudios.com</authorUrl>
+	<version>1.0.0</version>
+	<description>
+	<![CDATA[
+		<style type="text/css">
+			span.readonly { padding: 10px; font-family: Arial; font-size:13px !important; font-weight: normal !important; text-align: justify; color: #4d4d4d; line-height: 24px; }
+			span.readonly h1 { clear:both; font-family: Georgia, sans-serif; font-size:38px; margin:30px 20px 23px; padding:0px 0px 24px 10px; color:#333; border-bottom: 1px solid #eee; font-weight: normal; }
+			span.readonly p { margin: 0 26px 10px }
+			span.readonly p a { color: #2F4C6D }
+			span.readonly p.homepage { margin-top: 30px }
+			span.readonly p.license { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
+		</style>	
+		<span class="readonly"><h1>Awesome Social Links Sidebar<small>ver. 1.0.0</small></h1><p>
+		Thanks for downloading Awesome Social Links Sidebar. Please rate us on Joomla Extensions Directory if you have liked our module.</p>	
+		<p class="license">Awesome Social Links Sidebar is released under the <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GNU/GPL v2 license.</a></p></span></span>
+	]]>
+	</description>
+	<files>
+		<filename module="mod_awesome_social_links_sidebar">mod_awesome_social_links_sidebar.php</filename>
+		<filename>mod_awesome_social_links_sidebar.xml</filename>
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+					<field name="jquery_min_load" type="list" default="1" label="Load jQuery" description="You can skip loading jQuery if want">
+					  <option value="1">Yes</option>
+					  <option value="0">No</option>
+					</field>
+					
+					<field name="social_icon_alignment" type="list" default="0" label="Position" description="Choose either you like to display it on Left Position or Right Position">
+					  <option value="0">Right</option>
+					  <option value="1">Left</option>
+					</field>
+					
+					<field
+						name="positiontop"
+						type="text"
+						default="200"
+						label="Margin Top"
+						description="Margin from Top in pixel" />
+					
+					<field
+						name="facebook"
+						type="text"
+						default=""
+						label="Facebook"
+						description="Put your facebook page url here" />
+					
+					<field
+						name="twitter"
+						type="text"
+						default=""
+						label="Twitter"
+						description="Put your twitter url here" />
+					
+					<field
+						name="google_plus"
+						type="text"
+						default=""
+						label="Google Plus"
+						description="Put your google plus url here" />
+					
+					<field
+						name="pinterest"
+						type="text"
+						default=""
+						label="Pinterest"
+						description="Put your pinterest url here" />
+					
+					<field
+						name="youtube"
+						type="text"
+						default=""
+						label="Youtube"
+						description="Put your youtube channel url here" />
+					
+					<field
+						name="rssfed"
+						type="text"
+						default=""
+						label="Rss Feed"
+						description="Put your RSS Feed URL" />
+					
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="Module Class Suffix"
+					description="Put your module class suffix here" />	
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5"	client="site"	method="upgrade">
+<name>Simple Spotlight</name>
+<author>Pixel Point Creative </author>
+<creationDate>December 2011</creationDate>
+<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+<authorEmail>info@pixelpointcreative.com</authorEmail>
+<authorUrl>http://www.pixelpointcreative.com</authorUrl>
+<version>3.1</version>
+<description>JQuery image rotator with links.This rotator uses the cycle plugin for 27 great effects.</description>
+
+<files>
+      	<filename module="mod_ppc_simple_spotlight">mod_ppc_simple_spotlight.php</filename> 
+	<!--  <filename>mod_ppc_simple_spotlight.xml</filename> -->
+	<folder>tmpl</folder>
+	<folder>assets</folder>	
+    <folder>elements</folder>
+</files>
+<config>
+	<fields name="params" addfieldpath="/modules/mod_ppc_simple_spotlight/elements/">		   
+	   <fieldset name="basic" label="General Settings" >	 
+	   <field label="Version Check" type="upgradecheck" />
+	
+<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix"></field>
+<field name="width" type="text" default="910" label="Width" description="Specify width" />
+<field name="height" type="text" default="258" label="Height" description="Specify height" />
+
+<field name="effect" type="list"	label="Effect"	description="Effect"	default="toss"	>
+<option value="fade">Fade</option>
+<option value="fadeZoom">Fade Zoom</option>
+<option value="zoom">Zoom</option>
+<option value="shuffle">Shuffle</option>
+<option value="toss">Toss</option>
+<option value="wipe">Wipe</option>
+<option value="cover">Cover</option>
+<option value="uncover">Uncover</option>
+<option value="blindX">Blind X</option>
+<option value="blindY">Blind Y</option>
+<option value="blindZ">Blind Z</option>
+<option value="growY">Grow Y</option>
+<option value="curtainX">Curtain X</option>
+<option value="curtainY">Curtain Y</option>
+<option value="slideX">Slide X</option>
+<option value="slideY">Slide Y</option>
+<option value="turnUp">Turn Up</option>
+<option value="turnDown">Turn Down</option>
+<option value="turnLeft">Turn Left</option>
+<option value="turnRight">Turn Right</option>
+<option value="scrollRight">Scroll Right</option>
+<option value="scrollLeft">Scroll Left</option>
+<option value="scrollUp">Scroll Up</option>
+<option value="scrollDown">Scroll Down</option>
+<option value="scrollHorz">Scroll Horz</option>
+<option value="scrollVert">Scroll Vert</option>
+<option value="all">Random</option>
+				
+		    </field>
+             <field name="play" type="radio" class="btn-group"	label="Auto Start" description=""	default="1"	>
+		<option value="1">Yes</option>
+                <option value="0">No</option>
+		    </field>
+		     <field name="pause" type="radio" class="btn-group" label="Pause on Hover?"	description=""	default="1"	>
+		<option value="1">Yes</option>
+                <option value="0">No</option>
+		    </field>
+            <field name="slideshow_speed" type="text" default="800"	label="Animation Duration"	description="Animation Duration" />
+            <field name="timer_speed" type="text" default="5000"	label="Interval"		description="Interval" />
+<field name="random" type="radio" class="btn-group" default="1" label="Random" description="Random rotation.">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</field>
+<field name="nav" type="radio" class="btn-group" default="1" label="Navigation Buttons" description="Show/Hide Navigation Buttons">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="imgbutton" type="list"	label="Button Images"	description="Different stlye buttons to choose from"	default="1"	>
+<option value="1">Style 1</option>
+<option value="2">Style 2</option>
+<option value="3">Style 3</option>
+<option value="4">Style 4</option>
+<option value="5">Style 5</option>
+</field>
+
+<field name="buttons" type="radio" class="btn-group" default="right" label="Buttons Position" description="Where do buttons appear?">
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+<option value="center">Center</option> 
+    </field>
+    <field name="enableshadow" type="radio" class="btn-group" default="1" label="Enable Shadow?" description="Enable/Disable the bottom shadow">
+				<option value="1">Yes</option>
+<option value="0">No</option>
+</field>
+<field name="jquery" type="radio" class="btn-group" default="1" label="Include jQuery Library" description="Include jQuery Library">
+     		<option value="1">Yes</option>
+		<option value="0">No</option>
+	</field>
+		<field name="cache" type="list" default="0" label="Caching" description="Caching">
+			<option value="1">Use Cache</option>
+			<option value="0">Do not use Cache</option>
+		</field>
+		   <field name="cache_time" type="text" default="300" label="Cache time" description="Cache time" />		
+		<field name="note" type="textarea" cols="50" rows="10" default="" label="Notes" description=""/>
+	</fieldset>
+	
+	
+<fieldset name="ImageSettings" label="Image Settings 1-50">
+	<!-- Image 1 -->
+	<field name="spacer1" type="spacer" label="&lt;b&gt;Image 1&lt;/b&gt;" />
+	<field name="show1" type="radio" class="btn-group" default="1" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage" type="media" label="Image 1" description="" />
+	<field name="nolink" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window" type="radio" class="btn-group" default="_blank1" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description1" type="textarea" label="Description"></field>
+	<field name="alt" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 2 -->
+	<field name="spacer2" type="spacer" label="&lt;b&gt;Image 2&lt;/b&gt;" />
+	<field name="show2" type="radio" class="btn-group" default="1" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage2" type="media" default="" label="Image 2" description="" />
+	<field name="nolink2" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link2" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window2" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description2" type="textarea" label="Description"></field>
+	<field name="alt2" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book2" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 3 -->
+	<field name="spacer3" type="spacer" label="&lt;b&gt;Image 3&lt;/b&gt;" />
+	<field name="show3" type="radio" class="btn-group" default="1" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage3" type="media" default="" label="Image 3" description="" />
+	<field name="nolink3" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link3" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window3" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description3" type="textarea" label="Description"></field>
+	<field name="alt3" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book3" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 4 -->
+	<field name="spacer4" type="spacer" label="&lt;b&gt;Image 4&lt;/b&gt;" />
+	<field name="show4" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage4" type="media" default="" label="Image 4" description="" />
+	<field name="nolink4" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link4" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window4" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description4" type="textarea" label="Description"></field>
+	<field name="alt4" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book4" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 5 -->
+	<field name="spacer5" type="spacer" label="&lt;b&gt;Image 5&lt;/b&gt;" />
+	<field name="show5" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage5" type="media" default="" label="Image 5" description="" />
+	<field name="nolink5" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link5" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window5" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description5" type="textarea" label="Description"></field>
+	<field name="alt5" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book5" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 6 -->
+	<field name="spacer6" type="spacer" label="&lt;b&gt;Image 6&lt;/b&gt;" />
+	<field name="show6" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option> 
+	</field> 
+	<field name="spotlightImage6" type="media" default="" label="Image 6" description="" />
+	<field name="nolink6" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link6" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window6" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description6" type="textarea" label="Description"></field>
+	<field name="alt6" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book6" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 7 -->
+	<field name="spacer7" type="spacer" label="&lt;b&gt;Image 7&lt;/b&gt;" />
+	<field name="show7" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option> 
+	</field> 
+	<field name="spotlightImage7" type="media" default="" label="Image 7" description="" />
+	<field name="nolink7" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link7" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window7" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description7" type="textarea" label="Description"></field>
+	<field name="alt7" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book7" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 8 103 -->
+	<field name="spacer8" type="spacer" label="&lt;b&gt;Image 8&lt;/b&gt;" />
+	<field name="show8" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>  
+		<option value="1">Yes</option>
+	</field><field name="spotlightImage8" type="media" default="" label="Image 8" description="" />
+	<field name="nolink8" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link8" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window8" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option> 
+	</field>
+	<field name="description8" type="textarea" label="Description"></field>
+	<field name="alt8" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book8" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 9 104 -->
+	<field name="spacer9" type="spacer" label="&lt;b&gt;Image 9&lt;/b&gt;" />
+	<field name="show9" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage9" type="media" default="" label="Image 9" description="" />
+	<field name="nolink9" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link9" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window9" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description9" type="textarea" label="Description"></field>
+	<field name="alt9" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book9" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 10 -->
+	<field name="spacer10" type="spacer" label="&lt;b&gt;Image 10&lt;/b&gt;" />
+	<field name="show10" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage10" type="media" default="" label="Image 10" description="" />
+	<field name="nolink10" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link10" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window10" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description10" type="textarea" label="Description"></field>
+	<field name="alt10" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book10" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 11 -->
+	<field name="spacer11" type="spacer" label="&lt;b&gt;Image 11&lt;/b&gt;" />
+	<field name="show11" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage11" type="media" default="" label="Image 11" description="" />
+	<field name="nolink11" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link11" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window11" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description11" type="textarea" label="Description"></field>
+	<field name="alt11" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book11" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 12 -->
+	<field name="spacer12" type="spacer" label="&lt;b&gt;Image 12&lt;/b&gt;" />
+	<field name="show12" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage12" type="media" default="" label="Image 12" description="" />
+	<field name="nolink12" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link12" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window12" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description12" type="textarea" label="Description"></field>
+	<field name="alt12" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book12" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 13 -->
+	<field name="spacer13" type="spacer" label="&lt;b&gt;Image 13&lt;/b&gt;" />
+	<field name="show13" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage13" type="media" default="" label="Image 13" description="" />
+	<field name="nolink13" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link13" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window13" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description13" type="textarea" label="Description"></field>
+	<field name="alt13" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book13" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 14 -->
+	<field name="spacer14" type="spacer" label="&lt;b&gt;Image 14&lt;/b&gt;" />
+	<field name="show14" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage14" type="media" default="" label="Image 14" description="" />
+	<field name="nolink14" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link14" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window14" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description14" type="textarea" label="Description"></field>
+	<field name="alt14" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book14" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 15 -->
+	<field name="spacer15" type="spacer" label="&lt;b&gt;Image 15&lt;/b&gt;" />
+	<field name="show15" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage15" type="media" default="" label="Image 15" description="" />
+	<field name="nolink15" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link15" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window15" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description15" type="textarea" label="Description"></field>
+	<field name="alt15" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book15" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 16 -->
+	<field name="spacer16" type="spacer" label="&lt;b&gt;Image 16&lt;/b&gt;" />
+	<field name="show16" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage16" type="media" default="" label="Image 16" description="" />
+	<field name="nolink16" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link16" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window16" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description16" type="textarea" label="Description"></field>
+	<field name="alt16" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book16" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 17 -->
+	<field name="spacer17" type="spacer" label="&lt;b&gt;Image 17&lt;/b&gt;" />
+	<field name="show17" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage17" type="media" default="" label="Image 17" description="" />
+	<field name="nolink17" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link17" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window17" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description17" type="textarea" label="Description"></field>
+	<field name="alt17" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book17" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 18 -->
+	<field name="spacer18" type="spacer" label="&lt;b&gt;Image 18&lt;/b&gt;" />
+	<field name="show18" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage18" type="media" default="" label="Image 18" description="" />
+	<field name="nolink18" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link18" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window18" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description18" type="textarea" label="Description"></field>
+	<field name="alt18" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book18" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 19 -->
+	<field name="spacer19" type="spacer" label="&lt;b&gt;Image 19&lt;/b&gt;" />
+	<field name="show19" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage19" type="media" default="" label="Image 19" description="" />
+	<field name="nolink19" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link19" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window19" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description19" type="textarea" label="Description"></field>
+	<field name="alt19" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book19" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 20 -->
+	<field name="spacer20" type="spacer" label="&lt;b&gt;Image 20&lt;/b&gt;" />
+	<field name="show20" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage20" type="media" default="" label="Image 20" description="" />
+	<field name="nolink20" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link20" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window20" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description20" type="textarea" label="Description"></field>
+	<field name="alt20" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book20" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 21 -->
+	<field name="spacer21" type="spacer" label="&lt;b&gt;Image 21&lt;/b&gt;" />
+	<field name="show21" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage21" type="media" default="" label="Image 21" description="" />
+	<field name="nolink21" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link21" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window21" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description21" type="textarea" label="Description"></field>
+	<field name="alt21" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book21" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 22 -->
+	<field name="spacer22" type="spacer" label="&lt;b&gt;Image 22&lt;/b&gt;" />
+	<field name="show22" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage22" type="media" default="" label="Image 22" description="" />
+	<field name="nolink22" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link22" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window22" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description22" type="textarea" label="Description"></field>
+	<field name="alt22" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book22" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 23 -->
+	<field name="spacer23" type="spacer" label="&lt;b&gt;Image 23&lt;/b&gt;" />
+	<field name="show23" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage23" type="media" default="" label="Image 23" description="" />
+	<field name="nolink23" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link23" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window23" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description23" type="textarea" label="Description"></field>
+	<field name="alt23" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book23" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 24 -->
+	<field name="spacer24" type="spacer" label="&lt;b&gt;Image 24&lt;/b&gt;" />
+	<field name="show24" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage24" type="media" default="" label="Image 24" description="" />
+	<field name="nolink24" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link24" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window24" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description24" type="textarea" label="Description"></field>
+	<field name="alt24" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book24" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 25 -->
+	<field name="spacer25" type="spacer" label="&lt;b&gt;Image 25&lt;/b&gt;" />
+	<field name="show25" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage25" type="media" default="" label="Image 25" description="" />
+	<field name="nolink25" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link25" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window25" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description25" type="textarea" label="Description"></field>
+	<field name="alt25" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book25" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 26 -->
+	<field name="spacer26" type="spacer" label="&lt;b&gt;Image 26&lt;/b&gt;" />
+	<field name="show26" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage26" type="media" default="" label="Image 26" description="" />
+	<field name="nolink36" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link26" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window26" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description26" type="textarea" label="Description"></field>
+	<field name="alt26" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book26" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 27 -->
+	<field name="spacer27" type="spacer" label="&lt;b&gt;Image 27&lt;/b&gt;" />
+	<field name="show27" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage27" type="media" default="" label="Image 27" description="" />
+	<field name="nolink27" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link27" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window27" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description27" type="textarea" label="Description"></field>
+	<field name="alt27" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book27" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 28 -->
+	<field name="spacer28" type="spacer" label="&lt;b&gt;Image 28&lt;/b&gt;" />
+	<field name="show28" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage28" type="media" default="" label="Image 28" description="" />
+	<field name="nolink28" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link28" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window28" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description28" type="textarea" label="Description"></field>
+	<field name="alt28" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book28" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 29 -->
+	<field name="spacer29" type="spacer" label="&lt;b&gt;Image 29&lt;/b&gt;" />
+	<field name="show29" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage29" type="media" default="" label="Image 29" description="" />
+	<field name="nolink29" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link29" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window29" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description29" type="textarea" label="Description"></field>
+	<field name="alt29" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book29" type="text" default=""	label="Link Name"	description="label for link" />  
+	
+	<!-- Image 30 -->
+	<field name="spacer30" type="spacer" label="&lt;b&gt;Image 30&lt;/b&gt;" />
+	<field name="show30" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage30" type="media" default="" label="Image 30" description="" />
+	<field name="nolink30" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link30" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window30" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option> 
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description30" type="textarea" label="Description"></field>
+	<field name="alt30" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book30" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 31 -->
+	<field name="spacer31" type="spacer" label="&lt;b&gt;Image 31&lt;/b&gt;" />
+	<field name="show31" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage31" type="media" default="" label="Image 31" description="" />
+	<field name="nolink31" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link31" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window31" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description31" type="textarea" label="Description"></field>
+	<field name="alt31" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book31" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 32 -->
+	<field name="spacer32" type="spacer" label="&lt;b&gt;Image 32&lt;/b&gt;" />
+	<field name="show32" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage32" type="media" default="" label="Image 32" description="" />
+	<field name="nolink32" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link32" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window32" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description32" type="textarea" label="Description"></field>
+	<field name="alt32" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book32" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 33 -->
+	<field name="spacer33" type="spacer" label="&lt;b&gt;Image 33&lt;/b&gt;" />
+	<field name="show33" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage33" type="media" default="" label="Image 33" description="" />
+	<field name="nolink33" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link33" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window33" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description33" type="textarea" label="Description"></field>
+	<field name="alt33" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book33" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 34 -->
+	<field name="spacer34" type="spacer" label="&lt;b&gt;Image 34&lt;/b&gt;" />
+	<field name="show34" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage34" type="media" default="" label="Image 34" description="" />
+	<field name="nolink34" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link34" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window34" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description34" type="textarea" label="Description"></field>
+	<field name="alt34" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book34" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 35 -->
+	<field name="spacer35" type="spacer" label="&lt;b&gt;Image 35&lt;/b&gt;" />
+	<field name="show35" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage35" type="media" default="" label="Image 35" description="" />
+	<field name="nolink35" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link35" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window35" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description35" type="textarea" label="Description"></field>
+	<field name="alt35" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book35" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 36 -->
+	<field name="spacer36" type="spacer" label="&lt;b&gt;Image 36&lt;/b&gt;" />
+	<field name="show36" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage36" type="media" default="" label="Image 36" description="" />
+	<field name="nolink36" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link36" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window36" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description36" type="textarea" label="Description"></field>
+	<field name="alt36" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book36" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 37 -->
+	<field name="spacer37" type="spacer" label="&lt;b&gt;Image 37&lt;/b&gt;" />
+	<field name="show37" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage37" type="media" default="" label="Image 37" description="" />
+	<field name="nolink37" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link37" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window37" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description37" type="textarea" label="Description"></field>
+	<field name="alt37" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book37" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 38 -->
+	<field name="spacer38" type="spacer" label="&lt;b&gt;Image 38&lt;/b&gt;" />
+	<field name="show18" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage38" type="media" default="" label="Image 38" description="" />
+	<field name="nolink38" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link38" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window38" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description38" type="textarea" label="Description"></field>
+	<field name="alt38" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book38" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 39 -->
+	<field name="spacer39" type="spacer" label="&lt;b&gt;Image 39&lt;/b&gt;" />
+	<field name="show39" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage39" type="media" default="" label="Image 39" description="" />
+	<field name="nolink39" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link39" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window39" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description39" type="textarea" label="Description"></field>
+	<field name="alt39" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book39" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 40 -->
+	<field name="spacer40" type="spacer" label="&lt;b&gt;Image 40&lt;/b&gt;" />
+	<field name="show40" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage40" type="media" default="" label="Image 40" description="" />
+	<field name="nolink40" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link40" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window40" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description40" type="textarea" label="Description"></field>
+	<field name="alt40" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book40" type="text" default=""	label="Link Name"	description="label for link" />	
+	
+	<!-- Image 41 -->
+	<field name="spacer41" type="spacer" label="&lt;b&gt;Image 41&lt;/b&gt;" />
+	<field name="show41" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage41" type="media" default="" label="Image 41" description="" />
+	<field name="nolink41" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link41" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window41" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description41" type="textarea" label="Description"></field>
+	<field name="alt41" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book41" type="text" default=""	label="Link Name"	description="label for link" />	
+	
+	<!-- Image 42 -->
+	<field name="spacer42" type="spacer" label="&lt;b&gt;Image 42&lt;/b&gt;" />
+	<field name="show42" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage42" type="media" default="" label="Image 42" description="" />
+	<field name="nolink42" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link42" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window42" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description42" type="textarea" label="Description"></field>
+	<field name="alt42" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book42" type="text" default=""	label="Link Name"	description="label for link" />	
+	
+	<!-- Image 43 -->
+	<field name="spacer43" type="spacer" label="&lt;b&gt;Image 43&lt;/b&gt;" />
+	<field name="show43" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage43" type="media" default="" label="Image 43" description="" />
+	<field name="nolink43" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link43" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window43" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description43" type="textarea" label="Description"></field>
+	<field name="alt43" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book43" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 44 -->
+	<field name="spacer44" type="spacer" label="&lt;b&gt;Image 44&lt;/b&gt;" />
+	<field name="show44" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage44" type="media" default="" label="Image 44" description="" />
+	<field name="nolink44" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link44" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window44" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description44" type="textarea" label="Description"></field>
+	<field name="alt44" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book44" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 45 -->
+	<field name="spacer45" type="spacer" label="&lt;b&gt;Image 45&lt;/b&gt;" />
+	<field name="show45" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage45" type="media" default="" label="Image 45" description="" />
+	<field name="nolink45" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link45" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window45" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description45" type="textarea" label="Description"></field>
+	<field name="alt45" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book45" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 46 -->
+	<field name="spacer46" type="spacer" label="&lt;b&gt;Image 46&lt;/b&gt;" />
+	<field name="show46" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage46" type="media" default="" label="Image 46" description="" />
+	<field name="nolink46" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link46" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window46" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description46" type="textarea" label="Description"></field>
+	<field name="alt46" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book46" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 47 -->
+	<field name="spacer47" type="spacer" label="&lt;b&gt;Image 47&lt;/b&gt;" />
+	<field name="show47" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage47" type="media" default="" label="Image 47" description="" />
+	<field name="nolink47" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link47" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window47" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description47" type="textarea" label="Description"></field>
+	<field name="alt47" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book47" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 48 -->
+	<field name="spacer48" type="spacer" label="&lt;b&gt;Image 48&lt;/b&gt;" />
+	<field name="show48" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage48" type="media" default="" label="Image 48" description="" />
+	<field name="nolink48" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link48" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window48" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description48" type="textarea" label="Description"></field>
+	<field name="alt48" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book48" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 49 -->
+	<field name="spacer49" type="spacer" label="&lt;b&gt;Image 49&lt;/b&gt;" />
+	<field name="show49" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage49" type="media" default="" label="Image 49" description="" />
+	<field name="nolink49" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link49" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window49" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description49" type="textarea" label="Description"></field>
+	<field name="alt49" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book49" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	 <!-- Image 50 -->
+	<field name="spacer50" type="spacer" label="&lt;b&gt;Image 50&lt;/b&gt;" />
+	<field name="show50" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage50" type="media" default="" label="Image 50" description="" />
+	<field name="nolink50" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link50" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window50" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description50" type="textarea" label="Description"></field>
+	<field name="alt50" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book50" type="text" default=""	label="Link Name" description="label for link" />	 
+	
+</fieldset>   
+	
+<fieldset name="ImageSettings2" label="Image Settings 51-100">
+	
+	<!-- Image 51 -->
+	<field name="spacer51" type="spacer" label="&lt;b&gt;Image 51&lt;/b&gt;" />
+	<field name="show51" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage51" type="media" default="" label="Image 51" description="" />
+	<field name="nolink51" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link51" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window51" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description51" type="textarea" label="Description"></field>
+	<field name="alt51" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book51" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 52 -->
+	<field name="spacer52" type="spacer" label="&lt;b&gt;Image 52&lt;/b&gt;" />
+	<field name="show52" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage52" type="media" default="" label="Image 52" description="" />
+	<field name="nolink52" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link52" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window52" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description52" type="textarea" label="Description"></field>
+	<field name="alt52" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book52" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 53 -->
+	<field name="spacer53" type="spacer" label="&lt;b&gt;Image 53&lt;/b&gt;" />
+	<field name="show53" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage53" type="media" default="" label="Image 53" description="" />
+	<field name="nolink53" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link53" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window53" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description53" type="textarea" label="Description"></field>
+	<field name="alt53" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book53" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 54 -->
+	<field name="spacer54" type="spacer" label="&lt;b&gt;Image 54&lt;/b&gt;" />
+	<field name="show54" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage54" type="media" default="" label="Image 54" description="" />
+	<field name="nolink54" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link54" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window54" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description54" type="textarea" label="Description"></field>
+	<field name="alt54" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book54" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 55 -->
+	<field name="spacer55" type="spacer" label="&lt;b&gt;Image 55&lt;/b&gt;" />
+	<field name="show55" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage55" type="media" default="" label="Image 55" description="" />
+	<field name="nolink55" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link55" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window55" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description55" type="textarea" label="Description"></field>
+	<field name="alt55" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book55" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 56 -->
+	<field name="spacer56" type="spacer" label="&lt;b&gt;Image 56&lt;/b&gt;" />
+	<field name="show56" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage56" type="media" default="" label="Image 56" description="" />
+	<field name="nolink56" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link56" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window56" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description56" type="textarea" label="Description"></field>
+	<field name="alt56" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book56" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 57 -->
+	<field name="spacer57" type="spacer" label="&lt;b&gt;Image 57&lt;/b&gt;" />
+	<field name="show57" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage57" type="media" default="" label="Image 57" description="" />
+	<field name="nolink57" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link57" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window57" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description57" type="textarea" label="Description"></field>
+	<field name="alt57" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book57" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 58 -->
+	<field name="spacer58" type="spacer" label="&lt;b&gt;Image 58&lt;/b&gt;" />
+	<field name="show18" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage58" type="media" default="" label="Image 58" description="" />
+	<field name="nolink58" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link58" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window58" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description58" type="textarea" label="Description"></field>
+	<field name="alt58" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book58" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 59 -->
+	<field name="spacer59" type="spacer" label="&lt;b&gt;Image 59&lt;/b&gt;" />
+	<field name="show59" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage59" type="media" default="" label="Image 59" description="" />
+	<field name="nolink59" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link59" type="text" default="" size="50" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window59" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description59" type="textarea" label="Description"></field>
+	<field name="alt59" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book59" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	 <!-- Image 60 -->
+	<field name="spacer60" type="spacer" label="&lt;b&gt;Image 60&lt;/b&gt;" />
+	<field name="show60" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage60" type="media" default="" label="Image 60" description="" />
+	<field name="nolink60" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link60" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window60" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description60" type="textarea" label="Description"></field>
+	<field name="alt60" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book60" type="text" default=""	label="Link Name" description="label for link" />	
+	
+	<!-- Image 61 -->
+	<field name="spacer61" type="spacer" label="&lt;b&gt;Image 61&lt;/b&gt;" />
+	<field name="show61" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage61" type="media" default="" label="Image 61" description="" />
+	<field name="nolink61" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link61" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window61" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description61" type="textarea" label="Description"></field>
+	<field name="alt61" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book61" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 62 -->
+	<field name="spacer62" type="spacer" label="&lt;b&gt;Image 62&lt;/b&gt;" />
+	<field name="show62" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage62" type="media" default="" label="Image 62" description="" />
+	<field name="nolink62" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link62" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window62" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description62" type="textarea" label="Description"></field>
+	<field name="alt62" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book62" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 63 -->
+	<field name="spacer63" type="spacer" label="&lt;b&gt;Image 63&lt;/b&gt;" />
+	<field name="show63" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage63" type="media" default="" label="Image 63" description="" />
+	<field name="nolink63" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link63" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window63" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description63" type="textarea" label="Description"></field>
+	<field name="alt63" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book63" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 64 -->
+	<field name="spacer64" type="spacer" label="&lt;b&gt;Image 64&lt;/b&gt;" />
+	<field name="show64" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage64" type="media" default="" label="Image 64" description="" />
+	<field name="nolink64" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link64" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window64" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description64" type="textarea" label="Description"></field>
+	<field name="alt64" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book64" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 65 -->
+	<field name="spacer65" type="spacer" label="&lt;b&gt;Image 65&lt;/b&gt;" />
+	<field name="show65" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage65" type="media" default="" label="Image 65" description="" />
+	<field name="nolink65" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link65" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window65" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description65" type="textarea" label="Description"></field>
+	<field name="alt65" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book65" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 66 -->
+	<field name="spacer66" type="spacer" label="&lt;b&gt;Image 66&lt;/b&gt;" />
+	<field name="show66" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage66" type="media" default="" label="Image 66" description="" />
+	<field name="nolink66" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link66" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window66" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description66" type="textarea" label="Description"></field>
+	<field name="alt66" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book66" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 67 -->
+	<field name="spacer67" type="spacer" label="&lt;b&gt;Image 67&lt;/b&gt;" />
+	<field name="show67" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage67" type="media" default="" label="Image 67" description="" />
+	<field name="nolink67" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link67" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window67" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description67" type="textarea" label="Description"></field>
+	<field name="alt67" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book67" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 68 -->
+	<field name="spacer68" type="spacer" label="&lt;b&gt;Image 68&lt;/b&gt;" />
+	<field name="show18" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage68" type="media" default="" label="Image 68" description="" />
+	<field name="nolink68" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link68" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window68" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description68" type="textarea" label="Description"></field>
+	<field name="alt68" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book68" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 69 -->
+	<field name="spacer69" type="spacer" label="&lt;b&gt;Image 69&lt;/b&gt;" />
+	<field name="show69" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage69" type="media" default="" label="Image 69" description="" />
+	<field name="nolink69" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link69" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window69" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description69" type="textarea" label="Description"></field>
+	<field name="alt69" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book69" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 70 -->
+	<field name="spacer70" type="spacer" label="&lt;b&gt;Image 70&lt;/b&gt;" />
+	<field name="show70" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage70" type="media" default="" label="Image 70" description="" />
+	<field name="nolink70" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link70" type="text" default="" size="60" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window70" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description70" type="textarea" label="Description"></field>
+	<field name="alt70" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book70" type="text" default=""	label="Link Name" description="label for link" /> 
+	
+	<!-- Image 71 -->
+	<field name="spacer71" type="spacer" label="&lt;b&gt;Image 71&lt;/b&gt;" />
+	<field name="show71" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage71" type="media" default="" label="Image 71" description="" />
+	<field name="nolink71" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link71" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window71" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description71" type="textarea" label="Description"></field>
+	<field name="alt71" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book71" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 72 -->
+	<field name="spacer72" type="spacer" label="&lt;b&gt;Image 72&lt;/b&gt;" />
+	<field name="show72" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage72" type="media" default="" label="Image 72" description="" />
+	<field name="nolink72" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link72" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window72" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description72" type="textarea" label="Description"></field>
+	<field name="alt72" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book72" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 73 -->
+	<field name="spacer73" type="spacer" label="&lt;b&gt;Image 73&lt;/b&gt;" />
+	<field name="show73" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage73" type="media" default="" label="Image 73" description="" />
+	<field name="nolink73" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link73" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window73" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description73" type="textarea" label="Description"></field>
+	<field name="alt73" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book73" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 74 -->
+	<field name="spacer74" type="spacer" label="&lt;b&gt;Image 74&lt;/b&gt;" />
+	<field name="show74" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage74" type="media" default="" label="Image 74" description="" />
+	<field name="nolink74" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link74" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window74" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description74" type="textarea" label="Description"></field>
+	<field name="alt74" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book74" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 75 -->
+	<field name="spacer75" type="spacer" label="&lt;b&gt;Image 75&lt;/b&gt;" />
+	<field name="show75" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage75" type="media" default="" label="Image 75" description="" />
+	<field name="nolink75" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link75" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window75" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description75" type="textarea" label="Description"></field>
+	<field name="alt75" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book75" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 76 -->
+	<field name="spacer76" type="spacer" label="&lt;b&gt;Image 76&lt;/b&gt;" />
+	<field name="show76" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage76" type="media" default="" label="Image 76" description="" />
+	<field name="nolink76" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link76" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window76" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description76" type="textarea" label="Description"></field>
+	<field name="alt76" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book76" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 77 -->
+	<field name="spacer77" type="spacer" label="&lt;b&gt;Image 77&lt;/b&gt;" />
+	<field name="show77" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage77" type="media" default="" label="Image 77" description="" />
+	<field name="nolink77" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link77" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window77" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description77" type="textarea" label="Description"></field>
+	<field name="alt77" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book77" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 78 -->
+	<field name="spacer78" type="spacer" label="&lt;b&gt;Image 78&lt;/b&gt;" />
+	<field name="show78" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage78" type="media" default="" label="Image 78" description="" />
+	<field name="nolink78" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link78" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window78" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description78" type="textarea" label="Description"></field>
+	<field name="alt78" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book78" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 79 -->
+	<field name="spacer79" type="spacer" label="&lt;b&gt;Image 79&lt;/b&gt;" />
+	<field name="show79" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage79" type="media" default="" label="Image 79" description="" />
+	<field name="nolink79" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link79" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window79" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description79" type="textarea" label="Description"></field>
+	<field name="alt79" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book79" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 80 -->
+	<field name="spacer80" type="spacer" label="&lt;b&gt;Image 80&lt;/b&gt;" />
+	<field name="show80" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage80" type="media" default="" label="Image 80" description="" />
+	<field name="nolink80" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link80" type="text" default="" size="70" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window80" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description80" type="textarea" label="Description"></field>
+	<field name="alt80" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book80" type="text" default=""	label="Link Name" description="label for link" /> 
+	
+	<!-- Image 81 -->
+	<field name="spacer81" type="spacer" label="&lt;b&gt;Image 81&lt;/b&gt;" />
+	<field name="show81" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage81" type="media" default="" label="Image 81" description="" />
+	<field name="nolink81" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link81" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window81" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description81" type="textarea" label="Description"></field>
+	<field name="alt81" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book81" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 82 -->
+	<field name="spacer82" type="spacer" label="&lt;b&gt;Image 82&lt;/b&gt;" />
+	<field name="show82" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage82" type="media" default="" label="Image 82" description="" />
+	<field name="nolink82" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link82" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window82" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description82" type="textarea" label="Description"></field>
+	<field name="alt82" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book82" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 83 -->
+	<field name="spacer83" type="spacer" label="&lt;b&gt;Image 83&lt;/b&gt;" />
+	<field name="show83" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage83" type="media" default="" label="Image 83" description="" />
+	<field name="nolink83" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link83" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window83" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description83" type="textarea" label="Description"></field>
+	<field name="alt83" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book83" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 84 -->
+	<field name="spacer84" type="spacer" label="&lt;b&gt;Image 84&lt;/b&gt;" />
+	<field name="show84" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage84" type="media" default="" label="Image 84" description="" />
+	<field name="nolink84" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link84" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window84" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description84" type="textarea" label="Description"></field>
+	<field name="alt84" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book84" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 85 -->
+	<field name="spacer85" type="spacer" label="&lt;b&gt;Image 85&lt;/b&gt;" />
+	<field name="show85" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage85" type="media" default="" label="Image 85" description="" />
+	<field name="nolink85" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link85" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window85" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description85" type="textarea" label="Description"></field>
+	<field name="alt85" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book85" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 86 -->
+	<field name="spacer86" type="spacer" label="&lt;b&gt;Image 86&lt;/b&gt;" />
+	<field name="show86" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage86" type="media" default="" label="Image 86" description="" />
+	<field name="nolink86" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link86" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window86" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description86" type="textarea" label="Description"></field>
+	<field name="alt86" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book86" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 87 -->
+	<field name="spacer87" type="spacer" label="&lt;b&gt;Image 87&lt;/b&gt;" />
+	<field name="show87" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage87" type="media" default="" label="Image 87" description="" />
+	<field name="nolink87" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link87" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window87" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description87" type="textarea" label="Description"></field>
+	<field name="alt87" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book87" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 88 -->
+	<field name="spacer88" type="spacer" label="&lt;b&gt;Image 88&lt;/b&gt;" />
+	<field name="show88" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage88" type="media" default="" label="Image 88" description="" />
+	<field name="nolink88" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link88" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window88" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description88" type="textarea" label="Description"></field>
+	<field name="alt88" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book88" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 89 -->
+	<field name="spacer89" type="spacer" label="&lt;b&gt;Image 89&lt;/b&gt;" />
+	<field name="show89" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage89" type="media" default="" label="Image 89" description="" />
+	<field name="nolink89" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link89" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window89" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description89" type="textarea" label="Description"></field>
+	<field name="alt89" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book89" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 90 -->
+	<field name="spacer90" type="spacer" label="&lt;b&gt;Image 90&lt;/b&gt;" />
+	<field name="show90" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage90" type="media" default="" label="Image 90" description="" />
+	<field name="nolink90" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link90" type="text" default="" size="80" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window90" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description90" type="textarea" label="Description"></field>
+	<field name="alt90" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book90" type="text" default=""	label="Link Name" description="label for link" /> 
+	
+	<!-- Image 91 -->
+	<field name="spacer91" type="spacer" label="&lt;b&gt;Image 91&lt;/b&gt;" />
+	<field name="show91" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage91" type="media" default="" label="Image 91" description="" />
+	<field name="nolink91" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link91" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window91" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description91" type="textarea" label="Description"></field>
+	<field name="alt91" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book91" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 92 -->
+	<field name="spacer92" type="spacer" label="&lt;b&gt;Image 92&lt;/b&gt;" />
+	<field name="show92" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage92" type="media" default="" label="Image 92" description="" />
+	<field name="nolink92" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link92" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window92" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description92" type="textarea" label="Description"></field>
+	<field name="alt92" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book92" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 93 -->
+	<field name="spacer93" type="spacer" label="&lt;b&gt;Image 93&lt;/b&gt;" />
+	<field name="show93" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage93" type="media" default="" label="Image 93" description="" />
+	<field name="nolink93" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link93" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window93" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description93" type="textarea" label="Description"></field>
+	<field name="alt93" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book93" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 94 -->
+	<field name="spacer94" type="spacer" label="&lt;b&gt;Image 94&lt;/b&gt;" />
+	<field name="show94" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage94" type="media" default="" label="Image 94" description="" />
+	<field name="nolink94" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link94" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window94" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description94" type="textarea" label="Description"></field>
+	<field name="alt94" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book94" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 95 -->
+	<field name="spacer95" type="spacer" label="&lt;b&gt;Image 95&lt;/b&gt;" />
+	<field name="show95" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage95" type="media" default="" label="Image 95" description="" />
+	<field name="nolink95" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link95" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window95" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description95" type="textarea" label="Description"></field>
+	<field name="alt95" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book95" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 96 -->
+	<field name="spacer96" type="spacer" label="&lt;b&gt;Image 96&lt;/b&gt;" />
+	<field name="show96" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage96" type="media" default="" label="Image 96" description="" />
+	<field name="nolink96" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link96" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window96" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description96" type="textarea" label="Description"></field>
+	<field name="alt96" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book96" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 97 -->
+	<field name="spacer97" type="spacer" label="&lt;b&gt;Image 97&lt;/b&gt;" />
+	<field name="show97" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage97" type="media" default="" label="Image 97" description="" />
+	<field name="nolink97" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link97" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window97" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description97" type="textarea" label="Description"></field>
+	<field name="alt97" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book97" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 98 -->
+	<field name="spacer98" type="spacer" label="&lt;b&gt;Image 98&lt;/b&gt;" />
+	<field name="show98" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage98" type="media" default="" label="Image 98" description="" />
+	<field name="nolink98" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link98" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window98" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description98" type="textarea" label="Description"></field>
+	<field name="alt98" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book98" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 99 -->
+	<field name="spacer99" type="spacer" label="&lt;b&gt;Image 99&lt;/b&gt;" />
+	<field name="show99" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage99" type="media" default="" label="Image 99" description="" />
+	<field name="nolink99" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link99" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window99" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description99" type="textarea" label="Description"></field>
+	<field name="alt99" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book99" type="text" default=""	label="Link Name"	description="label for link" />
+	
+	<!-- Image 100 -->
+	<field name="spacer100" type="spacer" label="&lt;b&gt;Image 100&lt;/b&gt;" />
+	<field name="show100" type="radio" class="btn-group" default="0" label="Show this Image?" description="Show image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="spotlightImage100" type="media" default="" label="Image 100" description="" />
+	<field name="nolink100" type="radio" class="btn-group" default="0" label="Hyperlink Image?" description="Add Link to image?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+	<field name="link100" type="text" default="" size="90" label="Link URL" description="Enter the complete url that should open when you click on this image." />
+	<field name="window100" type="radio" class="btn-group" default="_blank" label="Link Window" description="Open links in new window or same window?">
+		<option value="_blank">New Window</option>
+		<option value="_self">Same Window</option>
+	</field>
+	<field name="description100" type="textarea" label="Description"></field>
+	<field name="alt100" type="text" default=""	label="Alt/Title"	description="alt and title tag for image" />
+	<field name="book100" type="text" default=""	label="Link Name" description="label for link" /> 
+	
+	
+</fieldset>  
+
+	 
+	</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Simple Spotlight Module Auto Updater">http://www.pixelpointcreative.com/autoupdates/simplespotlight.xml</server>
+	</updateservers>
+</extension>

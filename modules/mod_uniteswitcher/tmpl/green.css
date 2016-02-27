@@ -1,0 +1,37 @@
+ul.language-switcher {
+ 
+    background-position: 28px 9px;
+    background-repeat: no-repeat;
+    float:left;
+    padding: 0 20px 0 4px !important;
+	background-clip: padding-box;
+    background-position: -11px 9px;
+    border-radius: 4px 4px 4px 4px;
+	border:1px solid rgba(0, 0, 0, 0.7);
+	background-image: url("images/arrows/down-arrow.png");
+	background-color:#2f9b00;
+}
+
+ul.language-switcher:hover {
+  
+}
+ul.language-switcher li {
+    display: none;
+    height: 14px;
+    margin: 4px 0;
+    padding: 2px;
+}
+ul.language-switcher img {
+    vertical-align: top;
+}
+ul.language-switcher li.lang-active {
+    display: block;
+}
+ul.language-switcher:hover li {
+    display: block;
+}
+
+ul.language-switcher li:hover {
+    border: 1px solid green;
+    padding: 1px;
+}

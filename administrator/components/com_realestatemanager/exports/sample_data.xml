@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<houses_data>
+<version>3.0 PRO</version>
+<categories>
+<category>
+    <category_id>313</category_id>
+    <category_parent_id>0</category_parent_id>
+    <category_name><![CDATA[Rent]]></category_name>
+    <category_title><![CDATA[Rent]]></category_title>
+    <category_section>com_realestatemanager</category_section>
+    <category_published>1</category_published>
+</category>
+<category>
+    <category_id>314</category_id>
+    <category_parent_id>0</category_parent_id>
+    <category_name><![CDATA[Sale]]></category_name>
+    <category_title><![CDATA[Sale]]></category_title>
+    <category_section>com_realestatemanager</category_section>
+    <category_published>1</category_published>
+</category>
+<category>
+    <category_id>316</category_id>
+    <category_parent_id>314</category_parent_id>
+    <category_name><![CDATA[New]]></category_name>
+    <category_title><![CDATA[New]]></category_title>
+    <category_section>com_realestatemanager</category_section>
+    <category_published>1</category_published>
+</category>
+<category>
+    <category_id>315</category_id>
+    <category_parent_id>314</category_parent_id>
+    <category_name><![CDATA[Old]]></category_name>
+    <category_title><![CDATA[Old]]></category_title>
+    <category_section>com_realestatemanager</category_section>
+    <category_published>1</category_published>
+</category>
+</categories>
+<features>
+<feature>
+<feature_id>8</feature_id><feature_name><![CDATA[Space in Kitchen]]></feature_name><feature_categories><![CDATA[Dining]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>9</feature_id><feature_name><![CDATA[Breakfast Nook]]></feature_name><feature_categories><![CDATA[Dining]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>10</feature_id><feature_name><![CDATA[Family Combination]]></feature_name><feature_categories><![CDATA[Dining]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>11</feature_id><feature_name><![CDATA[Living Combination]]></feature_name><feature_categories><![CDATA[Dining]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>12</feature_id><feature_name><![CDATA[Formal Dining Room]]></feature_name><feature_categories><![CDATA[Dining]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>13</feature_id><feature_name><![CDATA[Dual Sinks]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>14</feature_id><feature_name><![CDATA[Triple Sinks]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>15</feature_id><feature_name><![CDATA[Built-in Dressing Vanities]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>16</feature_id><feature_name><![CDATA[Vanity Shelves & Mirrors in Showers]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>17</feature_id><feature_name><![CDATA[Jetted or Sunken Tubs]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>18</feature_id><feature_name><![CDATA[Separate Shower]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>19</feature_id><feature_name><![CDATA[Stone Surfaces]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>20</feature_id><feature_name><![CDATA[Tile Surfaces]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>21</feature_id><feature_name><![CDATA[Outside Access]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>22</feature_id><feature_name><![CDATA[Skylights]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>23</feature_id><feature_name><![CDATA[Heated Floors]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>24</feature_id><feature_name><![CDATA[Remodeled]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>25</feature_id><feature_name><![CDATA[Updated]]></feature_name><feature_categories><![CDATA[Bath]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>26</feature_id><feature_name><![CDATA[Attic Fans]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>27</feature_id><feature_name><![CDATA[Ceiling Fans]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>28</feature_id><feature_name><![CDATA[Dual Pane Windows]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>29</feature_id><feature_name><![CDATA[Triple Pane Windows]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>30</feature_id><feature_name><![CDATA[Programmable Thermostats]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>31</feature_id><feature_name><![CDATA[Single Flush Toilets]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>32</feature_id><feature_name><![CDATA[Window Shutters]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>33</feature_id><feature_name><![CDATA[Solar Heat]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>34</feature_id><feature_name><![CDATA[Solar Plumbing]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>35</feature_id><feature_name><![CDATA[Solar Screens]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>36</feature_id><feature_name><![CDATA[Storm Windows]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>38</feature_id><feature_name><![CDATA[Tankless Water Heater]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>39</feature_id><feature_name><![CDATA[Skylights or Sky Tubes]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>40</feature_id><feature_name><![CDATA[Whole House Fan]]></feature_name><feature_categories><![CDATA[Home Energy]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>41</feature_id><feature_name><![CDATA[Fireplace]]></feature_name><feature_categories><![CDATA[Interior]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>42</feature_id><feature_name><![CDATA[Granite Countertops]]></feature_name><feature_categories><![CDATA[Interior]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>43</feature_id><feature_name><![CDATA[Stone Countertops]]></feature_name><feature_categories><![CDATA[Interior]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>44</feature_id><feature_name><![CDATA[Security System]]></feature_name><feature_categories><![CDATA[Interior]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>45</feature_id><feature_name><![CDATA[Hi-Speed Internet Ready]]></feature_name><feature_categories><![CDATA[Interior]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>46</feature_id><feature_name><![CDATA[Home Office]]></feature_name><feature_categories><![CDATA[Interior]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+<feature>
+<feature_id>47</feature_id><feature_name><![CDATA[Air Conditioning]]></feature_name><feature_categories><![CDATA[Interior]]></feature_categories><feature_published><![CDATA[1]]></feature_published><feature_image_link><![CDATA[]]></feature_image_link></feature>
+</features>
+<houses_list>
+<house>
+<houseid>8</houseid>
+<catids>
+<catid>313</catid>
+</catids>
+<fk_rentid>0</fk_rentid>
+<sid>0</sid>
+<description><![CDATA[]]></description>
+<link><![CDATA[]]></link>
+<listing_type>house for rent</listing_type>
+<price>333380</price>
+<priceunit><![CDATA[UAH]]></priceunit>
+<htitle><![CDATA[Kharkiv Rent]]></htitle>
+<hcountry><![CDATA[Ukraine]]></hcountry>
+<hregion><![CDATA[Kharkivska]]></hregion>
+<hcity><![CDATA[Kharkiv]]></hcity>
+<hdistrict><![CDATA[Saltivka]]></hdistrict>
+<hzipcode><![CDATA[61000]]></hzipcode>
+<hlocation><![CDATA[19 Darvina str, 5 floor of 6 story]]></hlocation>
+<hlatitude>49.99733571069717</hlatitude>
+<hlongitude>36.245588064084586</hlongitude>
+<map_zoom>7</map_zoom>
+<bathrooms>1</bathrooms>
+<bedrooms>1</bedrooms>
+<broker></broker>
+<contacts></contacts>
+<image_link><![CDATA[F16E3C36-B5C3-F3DF-3CE7-6C6529F6A8CD_06f1_0000.jpg]]></image_link>
+<listing_status>active</listing_status>
+<price_type>negotiable</price_type>
+<property_type>apartment</property_type>
+<provider_class>agent</provider_class>
+<year>1998</year>
+<agent><![CDATA[]]></agent>
+<area><![CDATA[]]></area>
+<expiration_date>2015-03-13</expiration_date>
+<hoa_dues><![CDATA[]]></hoa_dues>
+<lot_size></lot_size>
+<model><![CDATA[]]></model>
+<property_taxes>0.00</property_taxes>
+<school><![CDATA[]]></school>
+<school_district><![CDATA[]]></school_district>
+<style><![CDATA[cape cod]]></style>
+<zoning><![CDATA[agricultural]]></zoning>
+<date>2009-09-25 14:30:21</date>
+<hits>6</hits>
+<published>1</published>
+<rents>
+</rents>
+<rentrequests>
+</rentrequests>
+<buyingrequests>
+</buyingrequests>
+<reviews>
+</reviews>
+<images>
+<image>
+<thumbnail_img><![CDATA[CB060420-85E3-B3FA-EC27-5ED4A8D4F1D1_06f1_0001_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[CB060420-85E3-B3FA-EC27-5ED4A8D4F1D1_06f1_0001.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[D89E1D35-CBD5-3C47-8DC1-1EDBE809E37D_06f1_0002_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[D89E1D35-CBD5-3C47-8DC1-1EDBE809E37D_06f1_0002.jpg]]></main_img>
+</image>
+</images>
+</house>
+<house>
+<houseid>5</houseid>
+<catids>
+<catid>313</catid>
+</catids>
+<fk_rentid>0</fk_rentid>
+<sid>0</sid>
+<description><![CDATA[<p>A truly unique apartment situated on one of the most prestigious gardens squares in Knightsbridge. Having just undergone a complete renovation throughout the results are simply stunning. Every detail has been painstakingly scrutinised.</p>]]></description>
+<link><![CDATA[]]></link>
+<listing_type>house for rent</listing_type>
+<price>2500</price>
+<priceunit><![CDATA[USD]]></priceunit>
+<htitle><![CDATA[Super London's apartmens]]></htitle>
+<hcountry><![CDATA[]]></hcountry>
+<hregion><![CDATA[]]></hregion>
+<hcity><![CDATA[]]></hcity>
+<hdistrict><![CDATA[]]></hdistrict>
+<hzipcode><![CDATA[]]></hzipcode>
+<hlocation><![CDATA[2,500 pw 3 bedroom apartment to rent Lennox Gardens, London]]></hlocation>
+<hlatitude>51.52869602791014</hlatitude>
+<hlongitude>-0.14336586085846648</hlongitude>
+<map_zoom>6</map_zoom>
+<bathrooms>2</bathrooms>
+<bedrooms>3</bedrooms>
+<broker></broker>
+<contacts></contacts>
+<image_link><![CDATA[11C758BE-1946-0B6D-65C1-64190BBC9655_4mill.jpg]]></image_link>
+<listing_status>active</listing_status>
+<price_type>negotiable</price_type>
+<property_type>apartment</property_type>
+<provider_class>agent</provider_class>
+<year>1983</year>
+<agent><![CDATA[]]></agent>
+<area><![CDATA[]]></area>
+<expiration_date>2013-12-25</expiration_date>
+<hoa_dues><![CDATA[]]></hoa_dues>
+<lot_size></lot_size>
+<model><![CDATA[]]></model>
+<property_taxes>0.00</property_taxes>
+<school><![CDATA[]]></school>
+<school_district><![CDATA[]]></school_district>
+<style><![CDATA[cape cod]]></style>
+<zoning><![CDATA[agricultural]]></zoning>
+<date>2009-09-25 14:32:16</date>
+<hits>14</hits>
+<published>1</published>
+<rents>
+</rents>
+<rentrequests>
+<rentrequest>
+<rent_from>2009-09-22</rent_from>
+<rent_until>2009-09-22</rent_until>
+<rent_request>2009-09-22 11:03:17</rent_request>
+<user_name>default username</user_name>
+<user_email>enter_your_email@mail.mail</user_email>
+<user_mailing><![CDATA[]]></user_mailing>
+<status>0</status>
+</rentrequest>
+</rentrequests>
+<buyingrequests>
+</buyingrequests>
+<reviews>
+</reviews>
+<images>
+<image>
+<thumbnail_img><![CDATA[B03D7935-F45B-BFB6-46D8-11F6ADB2DB7C_halg3737494_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[B03D7935-F45B-BFB6-46D8-11F6ADB2DB7C_halg3737494.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[6851E4F9-27F8-3117-521C-53EE472AFD28_halg3737495_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[6851E4F9-27F8-3117-521C-53EE472AFD28_halg3737495.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[D80C8829-539B-48A6-28B4-96EBAC271BBB_halg3737496_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[D80C8829-539B-48A6-28B4-96EBAC271BBB_halg3737496.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[8ED15CDD-F617-D7B1-BF4E-B000FF69C383_halg3737497_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[8ED15CDD-F617-D7B1-BF4E-B000FF69C383_halg3737497.jpg]]></main_img>
+</image>
+</images>
+</house>
+<house>
+<houseid>2</houseid>
+<catids>
+<catid>315</catid>
+</catids>
+<fk_rentid>0</fk_rentid>
+<sid>0</sid>
+<description><![CDATA[<p>A2 zoning, great potential for re-zoning located across the road from Canadian Tire, Big Bend Crossing Shopping Centre. House is partially renovated 3 bdrm suite up and 2 bdrm down with long term.</p>]]></description>
+<link><![CDATA[]]></link>
+<listing_type>house for sale</listing_type>
+<price>618800</price>
+<priceunit><![CDATA[USD]]></priceunit>
+<htitle><![CDATA[Unreal house in Burnaby]]></htitle>
+<hcountry><![CDATA[]]></hcountry>
+<hregion><![CDATA[]]></hregion>
+<hcity><![CDATA[]]></hcity>
+<hdistrict><![CDATA[]]></hdistrict>
+<hzipcode><![CDATA[]]></hzipcode>
+<hlocation><![CDATA[5924 10TH AV, Big Bend, Burnaby, $618,800.00]]></hlocation>
+<hlatitude>40.38002840251183</hlatitude>
+<hlongitude>-111.533203125</hlongitude>
+<map_zoom>5</map_zoom>
+<bathrooms>1</bathrooms>
+<bedrooms>5</bedrooms>
+<broker></broker>
+<contacts></contacts>
+<image_link><![CDATA[50654D04-C282-9E47-4F42-7B4B6F379851_v703809.jpg]]></image_link>
+<listing_status>active</listing_status>
+<price_type>negotiable</price_type>
+<property_type>apartment</property_type>
+<provider_class>agent</provider_class>
+<year>1945</year>
+<agent><![CDATA[Lee, Tim (Chien Hsien)]]></agent>
+<area><![CDATA[2200.0 sqft.]]></area>
+<expiration_date>2017-12-31</expiration_date>
+<hoa_dues><![CDATA[]]></hoa_dues>
+<lot_size></lot_size>
+<model><![CDATA[]]></model>
+<property_taxes>0.00</property_taxes>
+<school><![CDATA[]]></school>
+<school_district><![CDATA[]]></school_district>
+<style><![CDATA[cape cod]]></style>
+<zoning><![CDATA[agricultural]]></zoning>
+<date>2009-09-21 16:05:58</date>
+<hits>11</hits>
+<published>1</published>
+<rents>
+</rents>
+<rentrequests>
+</rentrequests>
+<buyingrequests>
+</buyingrequests>
+<reviews>
+</reviews>
+<images>
+<image>
+<thumbnail_img><![CDATA[92FE864B-2271-E8B1-A2C2-3F278ADEE670_16_12_2008_0001_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[92FE864B-2271-E8B1-A2C2-3F278ADEE670_16_12_2008_0001.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[18975E83-BAD3-A72C-6784-ABF2F1EC5E9F_16_12_2008_0002_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[18975E83-BAD3-A72C-6784-ABF2F1EC5E9F_16_12_2008_0002.jpg]]></main_img>
+</image>
+</images>
+</house>
+<house>
+<houseid>3</houseid>
+<catids>
+<catid>315</catid>
+</catids>
+<fk_rentid>0</fk_rentid>
+<sid>0</sid>
+<description><![CDATA[<p>WOW Great price for 21,186 sq ft lot in South Burnaby. The original family home has been well cared for &amp; ready to move in, rent out, or build your dream home! Over 50,000 below assessed value. Sunny south.</p>]]></description>
+<link><![CDATA[]]></link>
+<listing_type>house for sale</listing_type>
+<price>629649</price>
+<priceunit><![CDATA[USD]]></priceunit>
+<htitle><![CDATA[It is your dream!!!]]></htitle>
+<hcountry><![CDATA[]]></hcountry>
+<hregion><![CDATA[]]></hregion>
+<hcity><![CDATA[]]></hcity>
+<hdistrict><![CDATA[]]></hdistrict>
+<hzipcode><![CDATA[]]></hzipcode>
+<hlocation><![CDATA[4538 MARINE DR, Big Bend, Burnaby, $629,649.00]]></hlocation>
+<hlatitude>49.229468194067294</hlatitude>
+<hlongitude>-122.94699972864692</hlongitude>
+<map_zoom>4</map_zoom>
+<bathrooms>4</bathrooms>
+<bedrooms>5</bedrooms>
+<broker> Realty New Call</broker>
+<contacts></contacts>
+<image_link><![CDATA[CB47DF40-38B2-56E5-A84F-867EB7499F9D_yard_001.van.default.jpg]]></image_link>
+<listing_status>active</listing_status>
+<price_type>negotiable</price_type>
+<property_type>apartment</property_type>
+<provider_class>agent</provider_class>
+<year>1939</year>
+<agent><![CDATA[Berg, Valerie]]></agent>
+<area><![CDATA[1358.0 sqft.]]></area>
+<expiration_date>2047-06-01</expiration_date>
+<hoa_dues><![CDATA[]]></hoa_dues>
+<lot_size></lot_size>
+<model><![CDATA[]]></model>
+<property_taxes>0.00</property_taxes>
+<school><![CDATA[]]></school>
+<school_district><![CDATA[]]></school_district>
+<style><![CDATA[cape cod]]></style>
+<zoning><![CDATA[agricultural]]></zoning>
+<date>2009-09-25 14:26:19</date>
+<hits>13</hits>
+<published>1</published>
+<rents>
+</rents>
+<rentrequests>
+</rentrequests>
+<buyingrequests>
+</buyingrequests>
+<reviews>
+</reviews>
+<images>
+<image>
+<thumbnail_img><![CDATA[F71690A1-B0AF-26F8-B7C2-BADC78D13085_206054228_0001_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[F71690A1-B0AF-26F8-B7C2-BADC78D13085_206054228_0001.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[B34E54BF-2CF6-34E2-B63E-AC59978D6EA9_206054228_0002_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[B34E54BF-2CF6-34E2-B63E-AC59978D6EA9_206054228_0002.jpg]]></main_img>
+</image>
+</images>
+</house>
+<house>
+<houseid>6</houseid>
+<catids>
+<catid>316</catid>
+</catids>
+<fk_rentid>0</fk_rentid>
+<sid>0</sid>
+<description><![CDATA[<p>- 10,000sq ft freehold building plots with planning for a residence <br />- Beachfront plots available <br />- Land plots are in UK territory <br />- No taxes / no time limit on building / no restrictions on foreign ownership <br />- 112% capital]]></description>
+<link><![CDATA[]]></link>
+<listing_type>house for sale</listing_type>
+<price>57090</price>
+<priceunit><![CDATA[USD]]></priceunit>
+<htitle><![CDATA[House at the seaside]]></htitle>
+<hcountry><![CDATA[]]></hcountry>
+<hregion><![CDATA[]]></hregion>
+<hcity><![CDATA[]]></hcity>
+<hdistrict><![CDATA[]]></hdistrict>
+<hzipcode><![CDATA[]]></hzipcode>
+<hlocation><![CDATA[Spot Bay, Greater Antilles]]></hlocation>
+<hlatitude>19.752002128703865</hlatitude>
+<hlongitude>-79.73539352591615</hlongitude>
+<map_zoom>3</map_zoom>
+<bathrooms>0</bathrooms>
+<bedrooms>0</bedrooms>
+<broker></broker>
+<contacts></contacts>
+<image_link><![CDATA[E5836BB1-0B8D-8776-FCDF-605E6E0726C8_Caymans1Brac_0000.jpg]]></image_link>
+<listing_status>active</listing_status>
+<price_type>negotiable</price_type>
+<property_type>apartment</property_type>
+<provider_class>agent</provider_class>
+<year>2001</year>
+<agent><![CDATA[]]></agent>
+<area><![CDATA[]]></area>
+<expiration_date>2023-11-22</expiration_date>
+<hoa_dues><![CDATA[]]></hoa_dues>
+<lot_size></lot_size>
+<model><![CDATA[]]></model>
+<property_taxes>0.00</property_taxes>
+<school><![CDATA[]]></school>
+<school_district><![CDATA[]]></school_district>
+<style><![CDATA[cape cod]]></style>
+<zoning><![CDATA[agricultural]]></zoning>
+<date>2009-09-25 14:37:52</date>
+<hits>18</hits>
+<published>1</published>
+<rents>
+</rents>
+<rentrequests>
+</rentrequests>
+<buyingrequests>
+</buyingrequests>
+<reviews>
+</reviews>
+<images>
+<image>
+<thumbnail_img><![CDATA[5D339C2E-CEAA-CC6D-1FBC-BAEE16A2D252_Caymans1Brac_0001_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[5D339C2E-CEAA-CC6D-1FBC-BAEE16A2D252_Caymans1Brac_0001.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[21F7DE0A-5454-88BE-F1B5-141C0CA2F5DF_Caymans1Brac_0002_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[21F7DE0A-5454-88BE-F1B5-141C0CA2F5DF_Caymans1Brac_0002.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[59E45D34-195B-0C13-ECC9-2EE2247C7D9C_Caymans1Brac_0003_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[59E45D34-195B-0C13-ECC9-2EE2247C7D9C_Caymans1Brac_0003.jpg]]></main_img>
+</image>
+</images>
+</house>
+<house>
+<houseid>7</houseid>
+<catids>
+<catid>316</catid>
+</catids>
+<fk_rentid>0</fk_rentid>
+<sid>0</sid>
+<description><![CDATA[<p>This modern building is located on Berliner Allee; the main street of Weiensee where there are many shops that accommodate daily needs. About 500 m away are many parks and recreation areas. Transport link is excellent with the tram passing direct.]]></description>
+<link><![CDATA[]]></link>
+<listing_type>house for sale</listing_type>
+<price>3300000</price>
+<priceunit><![CDATA[EUR]]></priceunit>
+<htitle><![CDATA[Commercial property ]]></htitle>
+<hcountry><![CDATA[]]></hcountry>
+<hregion><![CDATA[]]></hregion>
+<hcity><![CDATA[]]></hcity>
+<hdistrict><![CDATA[]]></hdistrict>
+<hzipcode><![CDATA[]]></hzipcode>
+<hlocation><![CDATA[Commercial property for sale Berlin]]></hlocation>
+<hlatitude>52.5162574255489</hlatitude>
+<hlongitude>13.39223384813522</hlongitude>
+<map_zoom>2</map_zoom>
+<bathrooms>0</bathrooms>
+<bedrooms>0</bedrooms>
+<broker></broker>
+<contacts></contacts>
+<image_link><![CDATA[83B3448D-23CE-263E-946D-69882E54C8BD_BerlinerAllee_0000.jpg]]></image_link>
+<listing_status>active</listing_status>
+<price_type>negotiable</price_type>
+<property_type>apartment</property_type>
+<provider_class>agent</provider_class>
+<year>1994</year>
+<agent><![CDATA[]]></agent>
+<area><![CDATA[]]></area>
+<expiration_date>2017-07-15</expiration_date>
+<hoa_dues><![CDATA[]]></hoa_dues>
+<lot_size></lot_size>
+<model><![CDATA[]]></model>
+<property_taxes>0.00</property_taxes>
+<school><![CDATA[]]></school>
+<school_district><![CDATA[]]></school_district>
+<style><![CDATA[cape cod]]></style>
+<zoning><![CDATA[agricultural]]></zoning>
+<date>2009-09-25 14:40:25</date>
+<hits>6</hits>
+<published>1</published>
+<rents>
+</rents>
+<rentrequests>
+</rentrequests>
+<buyingrequests>
+</buyingrequests>
+<reviews>
+</reviews>
+<images>
+<image>
+<thumbnail_img><![CDATA[64704AD5-C035-15B4-1208-06A6B60CA005_BerlinerAllee_0001_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[64704AD5-C035-15B4-1208-06A6B60CA005_BerlinerAllee_0001.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[0A695762-E4D5-933D-D01E-6D2E56B1B523_BerlinerAllee_0002_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[0A695762-E4D5-933D-D01E-6D2E56B1B523_BerlinerAllee_0002.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[F34E783F-5948-1C0D-3437-6055B91129B1_BerlinerAllee_0003_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[F34E783F-5948-1C0D-3437-6055B91129B1_BerlinerAllee_0003.jpg]]></main_img>
+</image>
+<image>
+<thumbnail_img><![CDATA[BD60D8AF-3D0D-0DAE-65EA-A02A814FCC7F_BerlinerAllee_0004_mini.jpg]]></thumbnail_img>
+<main_img><![CDATA[BD60D8AF-3D0D-0DAE-65EA-A02A814FCC7F_BerlinerAllee_0004.jpg]]></main_img>
+</image>
+</images>
+</house>
+</houses_list>
+</houses_data>
