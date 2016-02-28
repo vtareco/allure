@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
 <?php
 if(!defined('_VALID_MOS') && !defined('_JEXEC')) die('Direct Access to '.basename(__FILE__).' is not allowed.');
 
@@ -10,7 +11,7 @@ if(!defined('_VALID_MOS') && !defined('_JEXEC')) die('Direct Access to '.basenam
  * @description Search RealEstate for RealEstateManager Component
  * Homepage: http://www.ordasoft.com
 */
-
+global $task; 
 defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 require_once ( JPATH_BASE .DS.'administrator'.DS.'components'.DS.'com_realestatemanager'.DS.'realestatemanager.class.others.php');
 require_once ( JPATH_BASE .DS.'administrator'.DS.'components'.DS.'com_realestatemanager'.DS.'realestatemanager.class.others.php' );
@@ -384,14 +385,23 @@ $cities = $database->loadObjectList();
 	-->
 	<?php if($params->get('rent') == 0){ ?>
             <div class="search_rent">
-		    <div id="search-title-arrival" class="search-title">
-			 <?php echo _REALESTATE_MANAGER_LABEL_ARRIVAL;?>                                             <!-- onfocus="this.setAttribute('type','date');" -->                       
-			</div><input id="search-arrival" placeholder='<?php echo _REALESTATE_MANAGER_ADMIN_IMPEXP;?>' type="text" class="dp" autocomplete="off" readonly="readonly" name="Arrival" max="5000-12-31" size="15" maxlength="20">
+		    <div id="search-title-arrival" class="">  <!-- class search-title VMT 28-02-2016 -->
+			 <?php echo _REALESTATE_MANAGER_LABEL_ARRIVAL." ";?>                                           
+			   <!-- onfocus="this.setAttribute('type','date');" -->                       
+			</div>
+			<input id="search-arrival" placeholder='<?php echo _REALESTATE_MANAGER_ADMIN_IMPEXP;?>' type="text" class="dp" autocomplete="off" readonly="readonly" name="Arrival" max="5000-12-31" size="15" maxlength="20">
 		    
 		    <div id="search-title-departure" class="search-title"><?php echo _REALESTATE_MANAGER_LABEL_DEPARTURE;?></div><input id="search-departure" class="dp" autocomplete="off" readonly="readonly" placeholder='<?php echo _REALESTATE_MANAGER_ADMIN_IMPEXP;?>' type="text" name="Departure" min="2000-01-02" size="15" maxlength="20">
+		    
 		    <?php
-		    if($showBroker == 0 || $showBroker == 1) {
+		    //
+		    // HOMEPAGE OU RESTANTES PAGINAS
+		    //
+		    // ($showBroker == 0 || $showBroker == 1) 
+		   // if($task == 'getSpotlight') { 
+		    //	echo "::::::::: ".$task;
 			?>
+		    <!-- N Pessoas -->
 			<div id="search-title-persons" class="search-title"><?php echo _REALESTATE_MANAGER_LABEL_BROKER;?></div>
 			<label id="search-label-regions" style="height: initial !important">
 				    <select id="search-selet-regions" name="Broker">
@@ -407,10 +417,6 @@ $cities = $database->loadObjectList();
 			</label>
 			<!--  <input id="search-persons" type="number" min="1" placeholder="100" size="15" name="Broker" maxlength="20"/>  -->
 			
-			
-		    <?php
-		    }
-		    ?>
 			<!-- ADVANCED SEARCH -->
 		    <!-- SEARCH ON MAP -->
 			<!-- FR || EN -->
@@ -421,6 +427,91 @@ $cities = $database->loadObjectList();
 				<a id="search-advancedsearch" href="<?php echo $mosConfig_live_site; ?>/fr/villas/search_villa"><?php echo _REALESTATE_MANAGER_LABEL_ADVANCED_SEARCH; ?></a>
 				<a id="search-mapsearch" href="<?php echo $mosConfig_live_site; ?>/fr/villas/search_villa/map"><?php echo _REALESTATE_MANAGER_ADMIN_ABOUT; ?></a>
 		    <?php }?>
+			
+			<?php
+		//    }else{
+		    ?>
+		    
+		  <!--    
+		     <div class="row_text">
+		    	<!-- WCs 
+		     	<div style="float:left;width:45%;margin-top:-25px;margin-bottom:-25px">
+			     	<div><?php echo _REALESTATE_MANAGER_LABEL_BATHROOMS;?></div>
+					<label id="search-label-regions" style="height: initial !important">
+						    <select id="search-selet-regions" name="Bathrooms">
+									<?php
+		                                for($i=1; $i<=20; $i++){
+		                                    echo '<option value="'.$i.'"';  
+		                                    if($_REQUEST['Bathrooms'] == $i)
+		                                    	echo " selected";
+		                                        echo '>'.$i.'</option>';
+		                                 }
+		                               ?>
+							</select>
+					</label> 
+				</div>
+				<!-- Quartos
+				<div style="float:right;margin-top:-25px;width:45%;"> 
+					<div><?php echo _REALESTATE_MANAGER_LABEL_BEDROOMS;?></div>
+					<label id="search-label-regions" style="height: initial !important">
+						    <select id="search-selet-regions" name="Bedrooms">
+									<?php
+		                                for($i=1; $i<=20; $i++){
+		                                    echo '<option value="'.$i.'"';
+		                                    if($_REQUEST['Bedrooms'] == $i)
+		                                    	echo " selected";
+		                                        echo '>'.$i.'</option>';
+		                                 }
+		                               ?>
+							</select>
+					</label> 
+			    </div>
+		    </div>
+		     <div class="row_text">
+		    	<!-- N Pessoas
+		     	<div style="float:left;width:45%;">
+			     	<div><?php echo _REALESTATE_MANAGER_LABEL_BROKER;?></div>
+					<label id="search-label-regions" style="height: initial !important">
+						    <select id="search-selet-regions" name="Broker">
+									<?php
+		                                for($i=1; $i<=30; $i++){
+		                                    echo '<option value="'.$i.'"';
+		                                    if($_REQUEST['Broker'] == $i)
+		                                    	echo " selected";
+		                                        echo '>'.$i.'</option>';
+		                                 }
+		                               ?>
+							</select>
+					</label> 
+				</div>
+				<!-- Max Value
+				<div style="float:right;margin-top:-25px;width:45%;"> 
+					<div><?php echo _REALESTATE_MANAGER_LABEL_SELECT_CATEGORIES;?></div>
+					<label id="search-label-regions" style="height: initial !important">
+						    <select name="Price" id="Price">
+	                            	<?php if($languagelocale == 'fr-FR'){ ?>
+	                               		<option value="" selected default><?php echo "illimité"; ?></option>
+	                                <?php  } else{ ?>
+	                                	<option value="" selected default><?php echo "unlimited"; ?></option>
+	                                <?php  } ?>
+			               				 <?php for($i=1000; $i<=10000; $i+=1000){ ?>
+	                                    	<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+		                        		 <?php  } ?>
+	                            </select>
+					</label> 
+			    </div>
+			    </div>
+		     	<br>efverv
+		     	<br>erfverv
+		     	<br>ervergvytjyu
+		     	<br>uikui,mu
+		     	<br>werrrw
+		     	<br>cvbbvvb
+		    <?php
+		  //  }	
+		    ?>
+		    -->
+			
 			<!--_REALESTATE_MANAGER_LABEL_AVAILABLE_FOR_RENT.':<br>'.
 		    
 		    REMOVIDO
@@ -577,6 +668,7 @@ $cities = $database->loadObjectList();
             <input type="hidden" name="Ownername" value="on">
         <?php }?>
 </div>
+<!-- BOTAO SEARCH -->
 <div>
             <div class="search_button">
                     <div style="margin: 1px;padding: 1px;">

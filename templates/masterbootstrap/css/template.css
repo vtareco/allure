@@ -1055,8 +1055,18 @@ label #search-label-regions {
 }
 
 #search-title-arrival{
-  position: absolute;
-  bottom: 254px;
+ position: absolute; 
+ bottom: 254px;
+ /*VMT 28-02-2016*/
+  color: #fff;
+  font-weight: 600;
+  font-size:14px;
+  text-transform: uppercase;
+  cursor: default !important;
+  font-family: "Open Sans","Arial",sans-serif;
+  margin-bottom:5px;
+  height: 15px;
+  margin-right: 26px;
 }
 #search-title-departure{
   position: absolute;
