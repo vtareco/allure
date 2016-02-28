@@ -260,7 +260,7 @@
                                           </div>
                                     </div>
                               <?php endif; ?>
-                              <div class="main-box">
+                              <div class="main-box <?php  if (strpos($_SERVER['REQUEST_URI'], '/allure/villas/view/') !== false) { echo 'vistaDeCasa'; }  ?>" >
                                     <jdoc:include type="component" />
                                     <jdoc:include type="message" />        
                               </div>       

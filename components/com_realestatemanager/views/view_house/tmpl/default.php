@@ -229,14 +229,14 @@ $dispatcher = JDispatcher::getInstance();
 	<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo "http://178.62.160.47/allure/index.php/villas/view/" . $house->id; ?>" data-text="<?php echo $house->htitle; ?>" data-via="AllureVillas" data-hashtags="RentVillasInPortugal"></a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<!-- GOOGLEPLUS -->
+    <!-- GOOGLEPLUS -->
 	<!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
 	<script src="https://apis.google.com/js/platform.js" async defer>
 	  {lang: 'en-GB'}
 	</script>
 	<!-- Posicione esta tag onde você deseja que o botão +1 apareça. -->
 	<div class="g-plusone" data-size="medium" data-width="300"></div>
-
+	
 	<!--  ENVIO POR EMAIL CASA -->
 	<a onclick="sendEmail();">
         <span class="glyphicon glyphicon-envelope"></span>
@@ -337,7 +337,7 @@ $dispatcher = JDispatcher::getInstance();
 		<!-- email notification for reviews -->  
         function sendEmail() 
         {
-            window.location = "mailto:info@allure-villas.com?Subject= <?php echo $currentcat->header; ?>";
+            window.location = "mailto:vtareco88@gmail.com?Subject= <?php echo $currentcat->header; ?>"; 
         }
         </script>
 <!-- BOOK NOW -->
@@ -364,9 +364,10 @@ $dispatcher = JDispatcher::getInstance();
 
         <p class="house-favorites-link">
             <?php
-            if(is_array($_SESSION['favorite_houses']) && !in_array($house->id, $_SESSION['favorite_houses'])) {
-            // is_array($_SESSION['favorite_houses']) && 
-            ?>
+             $bb = 0;
+            if( is_array($_SESSION['favorite_houses']) && !in_array($house->id, $_SESSION['favorite_houses']) ) {  
+            // 
+            	?>
                 <button id="house-favorite-link" onclick="addToFavorites();" class=""><?php echo _REALESTATE_MANAGER_LABEL_REMOVE_FAVORITE; ?></button></p>
             <?php
             } else { ?>
@@ -553,9 +554,10 @@ $dispatcher = JDispatcher::getInstance();
             </form>
         </div> 
         <!-- End Reviews Form -->
-        
         <?php
-//show the reviews
+		//
+		//show the reviews
+		//
             if ($params->get('show_reviews')) {
                 if ($reviews = $house->getReviews()) {
                     ?>
@@ -662,35 +664,38 @@ $dispatcher = JDispatcher::getInstance();
     <!-- Price and Availability Tab -->
     <div id="price_availability" class="tabcontent">
     	<div id="availability-form">
-        <?php
-        	// tabela preços sessao
-            $price_content = file_get_contents("http://www.holidayrentalmanagement.com/userratecards/pimsratecard.php?uid=0129&propcode=".$house->houseid."&lang=en");
-            /* Show price table */
-            //echo "<iframe height='600' width='603' frameborder='0' marginwidth='0' scrolling='no' src='http://www.holidayrentalmanagement.com/userratecards/pimsratecard.php?uid=0129&propcode=".$house->houseid."&lang=en'></iframe>";
-            echo $price_content;
-            echo "<br><br>";
-            /* Show Availability Calendar */
-            //$availability_calendar = file_get_contents("http://www.holidayrentalmanagement.com/usercalendars/pimscalendar.php?uid=0129&nohistory=1&nofuture=0&calsize=12&calcols=3&cellwidth=22&sizemonth=8&sizeday=8&sizedate=7&propcode=".$house->houseid."&lang=en");
-            //echo "<iframe height='600' width='603' frameborder='0' marginwidth='0' scrolling='no' src='http://www.holidayrentalmanagement.com/usercalendars/pimscalendar.php?uid=0129&nohistory=1&nofuture=0&calsize=12&calcols=3&cellwidth=22&sizemonth=8&sizeday=8&sizedate=7&propcode=".$house->houseid."&lang=en'></iframe>";
-            //echo $availability_calendar;
-            // calendario de availability
-            echo "<iframe name='calendar_iframe_viewhouse' id='calendar_iframe_viewhouse' height='600' width='603' frameborder='0' marginwidth='0' scrolling='no' src='http://www.holidayrentalmanagement.com/usercalendars/pimscalendar.php?uid=0129&nohistory=1&nofuture=0&calsize=12&calcols=3&cellwidth=72&sizemonth=8&sizeday=8&sizedate=7&propcode=".$house->houseid."&lang=en'></iframe>";
-            
-            echo "<div id='availability-tab-info'>";
-            if($language->getTag() == 'fr-FR')
-                echo $house->availability_tab_info_fr;
-            else 
-                echo $house->availability_tab_info;
-            echo "</div>";
-        ?>
+    		
+	    	<?php
+	        	// tabela preços sessao
+	            $price_content = file_get_contents("http://www.holidayrentalmanagement.com/userratecards/pimsratecard.php?uid=0129&propcode=".$house->houseid."&lang=en");
+	            /* Show price table */
+	            //echo "<iframe height='600' width='603' frameborder='0' marginwidth='0' scrolling='no' src='http://www.holidayrentalmanagement.com/userratecards/pimsratecard.php?uid=0129&propcode=".$house->houseid."&lang=en'></iframe>";
+	            echo $price_content;
+	            echo "<br><br>";
+	            /* Show Availability Calendar */
+	            //$availability_calendar = file_get_contents("http://www.holidayrentalmanagement.com/usercalendars/pimscalendar.php?uid=0129&nohistory=1&nofuture=0&calsize=12&calcols=3&cellwidth=22&sizemonth=8&sizeday=8&sizedate=7&propcode=".$house->houseid."&lang=en");
+	            //echo "<iframe height='600' width='603' frameborder='0' marginwidth='0' scrolling='no' src='http://www.holidayrentalmanagement.com/usercalendars/pimscalendar.php?uid=0129&nohistory=1&nofuture=0&calsize=12&calcols=3&cellwidth=22&sizemonth=8&sizeday=8&sizedate=7&propcode=".$house->houseid."&lang=en'></iframe>";
+	            //echo $availability_calendar;
+	            // calendario de availability
+	            echo "<iframe name='calendar_iframe_viewhouse' id='calendar_iframe_viewhouse' height='600' width='603' frameborder='0' marginwidth='0' scrolling='no' src='http://www.holidayrentalmanagement.com/usercalendars/pimscalendar.php?uid=0129&nohistory=1&nofuture=0&calsize=12&calcols=3&cellwidth=72&sizemonth=8&sizeday=8&sizedate=7&propcode=".$house->houseid."&lang=en'></iframe>";
+	            
+	            // Please Rotate to view calendar
+	            // echo "<div name='rotate_to_viewcalendar' id='rotate_to_viewcalendar' style='display:none'>"._REALESTATE_MANAGER_LABEL_ZONING."</div>";
+	            
+	            echo "<div id='availability-tab-info'>";
+		            if($language->getTag() == 'fr-FR')
+		                echo $house->availability_tab_info_fr;
+		            else 
+		                echo $house->availability_tab_info;
+	            echo "</div>";
+	        ?>
+	        
         </div>
         <div id="book-form" style=" display:none; background:white; position:relative; top:50px; margin-bottom:50px; margin-left: 2%; margin-right: 35%;">
-        
-        <iframe height="1000" width="800" frameborder="0" marginwidth="0" scrolling="AUT" src="<?php 
-    		echo "http://www.holidayrentalmanagement.com/PIMSforms/PIMSdatecheck.php?uin=447395&formID=3&propcode=".$house->houseid ."&amp;&inline=1";
-        	?>" style="top: 150px; left: 10px; padding: 40px; z-index: 1000;" id="book_house_panel"></iframe>
-    	
-    	 </div>
+            <iframe height="1000" width="800" frameborder="0" marginwidth="0" scrolling="AUT" src="<?php 
+	    		echo "http://www.holidayrentalmanagement.com/PIMSforms/PIMSdatecheck.php?uin=447395&formID=3&propcode=".$house->houseid ."&amp;&inline=1";
+	        	?>" style="top: 150px; left: 10px; padding: 40px; z-index: 1000;" id="book_house_panel"></iframe>
+	     </div>
     </div>
     <!-- End of Price and Availability Tab -->
     

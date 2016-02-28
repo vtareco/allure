@@ -70,7 +70,7 @@ HTML_realestatemanager::showCrumbs($task);
 	                        options.html(''); // fr toutes les villes
                                 options.append($("<option />").val("").text("<?php echo _REALESTATE_MANAGER_ALL_CITIES; ?>").attr("default", "default").attr("selected", "selected"));
 	                        $.each(cities, function() {
-	                            //console.log(this.hcity);
+	                   //         console.log(this.hcity);
 	                            options.append($("<option />").val(this.hcity).text(this.hcity));
 	                        });
 	                    });
@@ -530,7 +530,7 @@ $cities = $database->loadObjectList();
 					<!--  VALOR MAXIMO-->
 					<div style="float:right;width:45%;"> 
                                                     
-                     	<span class="col_text_1"><?php echo _REALESTATE_MANAGER_LABEL_SELECT_CATEGORIES; ?></span>
+                     	<span id="max_week_price" class="col_text_1"><?php echo _REALESTATE_MANAGER_LABEL_SELECT_CATEGORIES; ?></span>
                     	<span class="col_text_2">
                            <label id="search-label-regions" style="height:69px">
 	                            <select name="Price" id="Price">
