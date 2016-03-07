@@ -682,7 +682,7 @@ $dispatcher = JDispatcher::getInstance();
 	            // Please Rotate to view calendar
 	            // echo "<div name='rotate_to_viewcalendar' id='rotate_to_viewcalendar' style='display:none'>"._REALESTATE_MANAGER_LABEL_ZONING."</div>";
 	            
-	            echo "<div id='availability-tab-info'>";
+	            echo "<br><br><div id='availability-tab-info'>";
 		            if($language->getTag() == 'fr-FR')
 		                echo $house->availability_tab_info_fr;
 		            else 
