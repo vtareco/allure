@@ -464,6 +464,8 @@
                                     $('.parent > ul').addClass('dropdown-menu');
                               }
                               $('a#Login').click(function(){
+                            	  window.open('http://www.holidayrentalmanagement.com/userview/index.php?uid=447395','_blank');
+                                  
                                     /**
                                     DESCOMENTAR LOGIN
                                     if ($("#login-form").css('display') == 'none') {
