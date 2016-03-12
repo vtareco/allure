@@ -237,7 +237,7 @@
             <!----------------------------------------------------------- CONTENT ---------------------------------------------------------->
             <!----------------------------------------------------------- CONTENT ---------------------------------------------------------->
             <!----------------------------------------------------------- CONTENT ---------------------------------------------------------->
-            <div class="container">
+            <div class="container <?php echo str_replace("/","", $_SERVER['REQUEST_URI']) ?>">
                <div class="allureContainer">
                   <?php if($this->countModules('breadcrumbs')) : ?>
                         <div id="breadcrumbs">        
@@ -610,11 +610,11 @@
                         $("#searchResult").css('width', function(index) {
                                 var size = $(window).width();
                                 if (size > 1300) {
-                                       size =  1300- 345;
+                                       size =  1300- 354;
                                 }else if (size >= 1200) {
-                                       size =  size - 345;
+                                       size =  size - 354;
                                 }else if (size >= 600) {
-                                       size =  size - 279;
+                                       size =  size - 288;
                                 }else{
                                        size = size - 43;   
                                 } 
@@ -624,11 +624,11 @@
                                 $("#searchResult").css('width', function(index) {
                                        var size = $(window).width();
                                        if (size > 1300) {
-                                             size =  1300 -345;
+                                             size =  1300 -354;
                                        }else if (size >= 1200) {
-                                             size =  size - 345;
+                                             size =  size - 354;
                                        }else if (size >= 600) {
-                                             size =  size - 279;
+                                             size =  size - 288;
                                        }else{
                                              size = size - 43;   
                                        }

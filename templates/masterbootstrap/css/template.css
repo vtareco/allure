@@ -4507,8 +4507,8 @@ table#links_table_style td {
 	  padding-top: 0px;
 	  margin-right: inherit;
 	}
-	#top-header-intro{
-	  padding-left:17px;
+	#top-header-intro{ /* VMT 12-03-2016 */
+	  /*padding-left:17px;*/
 	}
 	#top-header-languages {
 	  top: 104px;
@@ -5196,7 +5196,7 @@ table#links_table_style td {
 	.ppc_spotlight_image_desc{
 	  display:block !important;
 	  right: 240px;
-	  max-width: 500px;
+	  max-width: 400px; /* VMT diminuir banner no tablet/ipad 12-04-2016 */ 
 	  width: auto;
 	  height: 150px;
 	}
@@ -6815,9 +6815,6 @@ ARRANJAR
 }
 
 /**************Alterações de dia 28 de fevereiro*****************/
-#rotate_to_viewcalendar{
-	display:none;
-}
 
 @media (min-width: 0px) and (max-width: 400px) {
 	#calendar_iframe_viewhouse{
@@ -6873,7 +6870,7 @@ ARRANJAR
 	}
 }
 
-/******************Alterasções dia 28 de fevereiro dude ************/
+/******************Alterasções dia 28/02/2016 Dude ************/
 @media (min-width: 0px) and (max-width: 768px) {
 	.item-page .media .media-object {
 	    margin-left: auto;
@@ -6927,6 +6924,37 @@ ARRANJAR
 @media (min-width: 767px) and (max-width: 979px) {
 	#title-search.bestof-forsale {
 	    margin-left: 0px !important;
+	}
+}
+
+/******************Alterasções dia 12/03/2016 VMT ************/
+
+/* esconde os titulos dos links no tablet/ipad */
+@media (min-width: 750px) and (max-width: 800px) {
+	#hideTitleLinks{
+		display:none;
+	}
+}
+
+@media (min-width: 600px){
+	#searchResult #gallery_blocks_rem .house-capacity {
+	    top: 29px !important;
+	    left: 15px !important;
+    }
+}
+
+
+@media (min-width: 600px) and (max-width: 1200px) {
+	.allurevillassearch_villa,
+	.allurevillasbest_of,
+	.allurevillasfor_sale{
+		padding-left:21px !important;
+	}
+}
+
+@media (min-width: 600px){
+	#fb-share-link{
+		display:inline-block !important;
 	}
 }
 /***************************************>Alterações para mobile ************************************/
