@@ -113,20 +113,92 @@ HTML_realestatemanager::showCrumbs($task);
             submitForm();
         })(jQuery);
     }
-    
-    function submitForm(){
+	
+	function getUrlParams() {
+            var href = window.location.href;
+	    var ret = new UrlParams();
+		
+	    href = href.split('#')[1];
+		
+	    if (href === undefined || href === null || href.length <= 1) {
+                return ret;
+            }
+		
+	    var params = href.split('&');
+		
+	    for(var i=0; i<params.length; i++){
+                var pair = params[i].split('=');
+                var value;
+		if (pair[1] === undefined || pair[1] === null) {
+                    value = '';
+                }else {
+                    value = pair[1];
+		}
+		
+		ret.addParam(pair[0], value);
+		
+	    }
+
+	    return ret;
+        }
+	
+	var UrlParam = function(name, value) {
+            this.value = value;
+	    this.name = name;
+        }
+	
+	var UrlParams = function () {
+            this.params = new Array();
+		
+	    this.addParam = function(name, value){
+		var p = new UrlParam(name, value);
+		this.params.push(p);
+	    }
+		
+	    this.getParamValue = function(name) {
+		if (this.params === undefined || this.params === null || this.params.length === 0) {
+                    return null;
+                }
+		for(var j=0; j<this.params.length; j++){
+		    if (this.params[j].name == name) {
+                        return this.params[j].value;
+                    }
+		}
+		return null;
+	    }
+		
+	    this.getPageValue = function(){
+		var p = this.getParamValue('p');
+		var ret = 0;
+			
+		if (p !== undefined && p !== null && p !== '') {
+                    ret = p;
+                }
+			
+		return ret;
+	    }
+    }
+	
+    function submitForm(usingPagination){
         //document.getElementById("searchForm").submit();
         (function($){
             showLoading();
+			if (!usingPagination) {
+				$("#limitstart").val('0');
+				window.location.hash = '#showResult&p=0';
+            }
             var params = $("form#searchForm").serialize();
-            //console.log(params);
+			
             $.ajax({
                 url: $("form#searchForm").attr('action'),
                 data: params,
                 type: "POST"
                 //preloadImage: 'modules/mod_bt_contentslider/tmpl/images/loading.gif'
             }).done(function(data){
-
+		var page = $("#limitstart").val();
+		
+                page = (page/12)+1;
+                	
                 //Actualiza a vista em listagem
                 $("#map_canvas").html($(data).find("#map_canvas").html());
                 if ($(data).find("#gallery_rem").html() === undefined) {
@@ -196,26 +268,31 @@ HTML_realestatemanager::showCrumbs($task);
     function executeNewSearch() {
         (function($){
             $("#limitstart").val("0");
+			window.location.hash = '#showResult&p=0';
 	    submitForm();
 	})(jQuery);
     }
     
     function changeList(type) {
         (function($){
+     //       console.log('-------------->'+type);
             $old = $currentList;
             $old.removeClass("current-search-list");
             $old.fadeOut();
             if (type == "MAP") {
+   //             console.log('NO MAPA!!!!');
                 $newList = $("#map_canvas");
                 $("div#ShowOrderBy").hide();
                 $("div.page_navigation").hide();
                 
             }else if (type == "TABLE") {
+      //          console.log('NA TABLE!!!!');
                 $newList = $("#gallery_blocks_rem");
                 $("div#ShowOrderBy").show();
                 $("div.page_navigation").show();
                 
             }else{
+      //          console.log('NA LIST!!!!');
                 $newList = $("#gallery_rem");
                 $("div#ShowOrderBy").show();
                 $("div.page_navigation").show();
@@ -245,8 +322,11 @@ HTML_realestatemanager::showCrumbs($task);
     }
     function hideLoading() {
             (function($){
-                $("div#ShowOrderBy").show();
-                $("div.page_navigation").show();
+       //         console.log($currentList.attr('id'));
+                if ($currentList.attr('id') != 'map_canvas') {
+                    $("div#ShowOrderBy").show();
+                    $("div.page_navigation").show();
+                }
                 $("#loading_houses").hide();
             })(jQuery);
     }
@@ -325,11 +405,24 @@ HTML_realestatemanager::showCrumbs($task);
             $(document).on("click", "a.pagenav", function(){
                 if ($(this).parent().attr('class') != 'active' && $(this).parent().attr('class') != 'disabled') {
                     $("input[name='limit']").attr('value', $(this).attr('data-limit'));
-                    $("input[name='limitstart']").attr('value', $(this).attr('data-limitstart'));
-
-                    submitForm();
+		    var limitstart = parseInt($(this).attr('data-limitstart'));
+                    $("input[name='limitstart']").attr('value', limitstart);
+		    event.preventDefault();
+                    var page=(limitstart/12)+1;
+            //        console.log('limitstart->'+limitstart);
+            //        console.log('page->'+page); 
+		    window.location.hash = '#showResult&p='+page;
+                    //submitForm();
                 }
             });
+			
+	    $(window).on('hashchange', function(){
+		var urlParams = getUrlParams();
+		var urlPage = urlParams.getPageValue();
+                urlPage = (urlPage-1)*12;
+		$("#limitstart").val(urlPage);
+		submitForm(true);
+	    });
             
             if (first_open) {
                 submitForm();

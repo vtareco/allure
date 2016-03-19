@@ -99,6 +99,21 @@ defined('_JEXEC') or die;
 				<?php echo $this->contact->btw_number .'<br/>'; ?>
 			</span>
 		</dd>
+		
+		
+		<!-- img uniao europeia -->
+		<br>
+		<dd>
+			<!-- style="width:119px;height:67px"  --> 
+			<div><img style="width:119px;height:67px" src="images/europa_logo.png"/></div>
+			
+			<div class="contact-subtitle" style="font-weight: normal;">
+				<?php echo JText::_('EUROPA_LOGO'); ?>
+				<a href="http://ec.europa.eu/taxation_customs/vies/vieshome.do?selectedLanguage=EN" target="_blank" style="font-size: 14px; line-height: 18.2px; color: #e55727;">
+				<?php echo JText::_('EUROPA_LINK'); ?>
+				</a>
+			</div>	
+		</dd>
 		<?php endif; ?>
 		</div>
 		<div id="contact-opening-hours">
