@@ -247,8 +247,10 @@ $dispatcher = JDispatcher::getInstance();
     </a>
 </div>
  
+ 
 <div id="house-top-page" style="max-height:500px">
-    <!-- Fast Photo Gallery -->
+    
+    <!-- Fast Photo Gallery SLIDER -->
     <div id="house_photo_gallery">
         <div id="detailHouse-previous"><a></a></div>
         <div id="detailHouse-next"><a></a></div>
@@ -364,10 +366,9 @@ $dispatcher = JDispatcher::getInstance();
 
         <p class="house-favorites-link">
             <?php
-             $bb = 0;
-            if( is_array($_SESSION['favorite_houses']) && !in_array($house->id, $_SESSION['favorite_houses']) ) {  
-            // 
-            	?>
+            if(is_array($_SESSION['favorite_houses']) && !in_array($house->id, $_SESSION['favorite_houses'])) {
+            // is_array($_SESSION['favorite_houses']) && 
+            ?>
                 <button id="house-favorite-link" onclick="addToFavorites();" class=""><?php echo _REALESTATE_MANAGER_LABEL_REMOVE_FAVORITE; ?></button></p>
             <?php
             } else { ?>
@@ -405,12 +406,13 @@ $dispatcher = JDispatcher::getInstance();
         }
         ?>
         <li><a href="#" rel="country4" class="house-info-tab"><?php echo _REALESTATE_MANAGER_TAB_REVIEWS; ?></a></li>
+        <!-- FOR SALE -->
         <?php
-        if($house->extra1 == "true"){
-        ?>
+        if($house->extra1 == "true" && preg_match("/\/villas\/for_sale/", $_SERVER['HTTP_REFERER'])){
+        ?> 
             <li><a href="#" rel="for_sale" class="house-info-tab"><?php echo _REALESTATE_MANAGER_LABEL_EXTRA1; ?></a></li>
         <?php
-        }
+         }
         ?>
     </ul>
 
