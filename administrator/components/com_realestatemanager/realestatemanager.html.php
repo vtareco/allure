@@ -10,7 +10,7 @@ if (!defined('_VALID_MOS') && !defined('_JEXEC'))
  * @version: 3.0 Pro
  *
  * */
-require_once ($mosConfig_absolute_path . "/libraries/joomla/factory.php");
+require_once ($mosConfig_absolute_path . "/libraries/joomla/factory.php"); 
 require_once ( JPATH_BASE . DS . 'includes' . DS . 'defines.php' );
 require_once ( JPATH_BASE . DS . 'includes' . DS . 'framework.php' );
 // ensure this file is being included by a parent file
@@ -276,6 +276,7 @@ class HTML_Categories {
 /*********************************************************************************************/
 ?>     
 <script>
+
     window.onload = function(){
         
         var languageParentId = document.querySelectorAll('#language_associate_category');
@@ -514,6 +515,7 @@ static function edit_review($option, $house_id, $review) {
                     <th align = "center" class="title" width="10%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_RENT_UNTIL; ?></th>
                     <th align = "center" class="title" width="5%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_HOUSEID; ?></th>
                     <th align = "center" class="title" width="15%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_ADDRESS; ?></th>
+                    <th align = "center" class="title" width="15%" nowrap="nowrap"><?php echo "Region"; ?></th>
                     <th align = "center" class="title" width="15%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_RENT_USER; ?></th>
                     <th align = "center" class="title" width="15%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_RENT_EMAIL; ?></th>
                     <th align = "center" class="title" width="20%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_RENT_ADRES; ?></th>
@@ -573,14 +575,13 @@ static function edit_review($option, $house_id, $review) {
         <?php
     }
 
-	/**
+    /**
      * Configurar informacao relativa á pagina For Sale
      * @param unknown $option
      * @param unknown $buy_requests
      * @param unknown $pageNav
      */
     static function showRequestBuyingHouses($option, $buy_requests, $pageNav) {
-    
         global $my, $mosConfig_live_site, $mainframe,$doc;
         
         $doc = JFactory::getDocument();
@@ -610,7 +611,7 @@ static function edit_review($option, $house_id, $review) {
             <?php editorArea('editor1', $introduction_fr, 'introduction_fr', '500', '250', '70', '100'); 
             ?>
       
-     <!-- _REALESTATE_MANAGER_HOUSE_IMAGE_HEADER_SETTINGS not used-->
+       <!-- _REALESTATE_MANAGER_HOUSE_IMAGE_HEADER_SETTINGS not used-->
            
            <input type="hidden" name="const" value="<?php echo "not_used"; ?>"/> <!-- not needed -->
 	       <input type="hidden" name="option" value="com_realestatemanager" />
@@ -620,13 +621,11 @@ static function edit_review($option, $house_id, $review) {
 		   <input type="hidden" name="task" value="" />
 	      </form>
         <?php
-    
     }
 
     static function showHouses($option, $rows_house, & $clist, &$language, & $rentlist, & $publist, & $ownerlist, & $search, & $pageNav) {
         global $my, $mosConfig_live_site, $mainframe, $session, $doc;
         global $templateDir; // for J 1.6
-
         $doc->addScript($mosConfig_live_site . '/components/com_realestatemanager/includes/functions.js');
         $doc->addStyleSheet($mosConfig_live_site . '/administrator/components/com_realestatemanager/admin_realestatemanager.css');
 
@@ -691,7 +690,7 @@ static function edit_review($option, $house_id, $review) {
                 </tr>
             </table>
 
-            <!-- TABS PAINEL ADMINISTRACAO VILLAS -->
+			<!-- TABS PAINEL ADMINISTRACAO VILLAS -->
             <!-- TABS PAINEL ADMINISTRACAO VILLAS -->
             <!-- TABS PAINEL ADMINISTRACAO VILLAS -->
             <table cellpadding="4" class="adminlist list_05">
@@ -707,7 +706,7 @@ static function edit_review($option, $house_id, $review) {
                     <th align = "center" class="title" width="15%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_EXTRA2; ?></th>
                     <th align = "center" class="title" width="15%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_EXTRA1; ?></th>
                     <th align = "center" class="title" width="16%" nowrap="nowrap"><?php echo _HEADER_PUBLISHED; ?></th>
-                   
+                    
                     <!--<th align = "center" class="title" width="16%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_CATEGORY; ?></th>
                     <th align = "center" class="title" width="5%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_OWNER; ?></th>
                     <th align = "center" class="title" width="5%" nowrap="nowrap"><?php echo _REALESTATE_MANAGER_LABEL_RENT; ?></th>
@@ -809,8 +808,8 @@ static function edit_review($option, $house_id, $review) {
                         </td>
                         
                         <!-- / TABS PAINEL ADMINISTRACAO VILLAS -->
-			            <!-- / TABS PAINEL ADMINISTRACAO VILLAS -->
-			            <!-- / TABS PAINEL ADMINISTRACAO VILLAS -->
+            			<!-- / TABS PAINEL ADMINISTRACAO VILLAS -->
+            			<!-- / TABS PAINEL ADMINISTRACAO VILLAS -->
                         <?php /* ?>
                         <td align = "center"><?php echo $row->category; ?></td>
                         <td align = "center"><?php echo $row->editor; ?></td>
@@ -1694,7 +1693,7 @@ static function edit_review($option, $house_id, $review) {
         
         $is_admin = in_array(7,$my->groups);
 
-        //echo "-------------->".$is_admin;
+        //echo "-------------->".$row->published; 
 
         if($realestatemanager_configuration['special_price']['show']){
             $switchTranslateDayNight = _REALESTATE_MANAGER_RENT_SPECIAL_PRICE_PER_DAY;       
@@ -1899,8 +1898,14 @@ static function edit_review($option, $house_id, $review) {
                     <td align="left"><input class="inputbox" type="text" name="bedrooms" size="10" value="<?php echo $row->bedrooms; ?>" /></td>
                 </tr>
                 <tr>
+                	<!-- N PESSOAS -->
                     <td valign="top"><?php echo _REALESTATE_MANAGER_LABEL_BROKER; ?>:</td>
-                    <td align="left"><input class="inputbox" type="text" name="broker" size="40" value="<?php echo $row->broker; ?>" /></td>
+                    <td align="left"><input class="inputbox" type="text" name="broker" size="40" value="<?php echo $row->broker; 
+                    
+                    if($row->broker == 0){
+                    	$row->broker = 1;
+                    }
+                    ?>" /></td>
                 </tr>
                 <tr>
                     <td valign="top"><?php echo _REALESTATE_MANAGER_LABEL_PROVIDER_CLASS; ?>:</td>
@@ -2224,7 +2229,7 @@ static function edit_review($option, $house_id, $review) {
                    cellpadding="4" cellspacing="1" border="0" width="100%" class="adminform form_11">
                     <tr>
                         <td valign="top"><?php echo _REALESTATE_MANAGER_LABEL_PRICE; ?>:</td>
-                         <td align="left">
+                        <td align="left">
                             <input class="inputbox" type="text" name="price" size="15" value="<?php 
                             if($row->price == 0)
                             	echo "";
@@ -2535,7 +2540,7 @@ static function edit_review($option, $house_id, $review) {
                             By CMS at 04-04-2015
                             You should insert one video (youtube link) per line
                             -->
-                        <textarea id="house_videos" style="width:100%" name="house_videos"><?php echo implode($row->videos, "\n"); ?></textarea><br>
+                        <textarea style="width:100%" id="house_videos" name="house_videos"><?php echo implode($row->videos, "\n"); ?></textarea><br>
                         <small>To add new videos, please insert youtube video link in a new link of text box.</small>
                     </td>
                 </tr>
@@ -2592,6 +2597,29 @@ static function edit_review($option, $house_id, $review) {
                 $tabs->startTab('<a href="javascript:rem_initialize();">' . _REALESTATE_MANAGER_ADMIN_HOUSE_TAB_OWNER_CONTACTS . '</a>', "addHouse");
             }
             ?>
+            <script>
+            
+                /**
+                 * Obter cidades por regiao selecionada
+                 */
+                function getCities($i){
+                    (function($){
+                        $.ajax ({
+                            url: '<?php echo $mosConfig_live_site; ?>/villas/ajax_get_cities/?region='+$i,
+                            type: 'GET'
+                        }).done(function(data){
+                            var cities = JSON.parse($(data).find("result").text());
+                            var options = $("#hcity");
+                            options.html(''); // fr toutes les villes
+                            options.append($("<option />").val("").text("<?php echo _REALESTATE_MANAGER_ALL_CITIES; ?>").attr("default", "default").attr("selected", "selected"));
+                            $.each(cities, function() {
+                                options.append($("<option />").val(this.hcity).text(this.hcity));
+                            });
+                        });
+                    })(jQuery);
+                }
+                
+            </script>
             <table cellpadding="4" cellspacing="1" border="0" width="100%" class="adminform form_15">
 
                 <tr>
@@ -2608,7 +2636,29 @@ static function edit_review($option, $house_id, $review) {
                 <tr>
                     <td valign="top"><?php echo _REALESTATE_MANAGER_LABEL_REGION; ?>:</td>
                     <td align="left">
-                        <select name="hregion" id="hregion">
+                    
+                    
+                    <?php 
+                    
+                    // cities
+                    $whereclause = '';
+                    if($row->hregion != null && $row->hregion != ''){
+                    	$whereclause = "WHERE hregion='".$row->hregion."'";
+                    }
+                    $getCities = " SELECT DISTINCT(hcity) FROM #__rem_houses ". $whereclause ." ORDER BY hcity ASC";
+                    $database->setQuery($getCities);
+                    $cities = $database->loadObjectList();
+                    
+                    $provider_class[0] = _REALESTATE_MANAGER_OPTION_SELECT;
+                    $provider_class1 = explode(',', _REALESTATE_MANAGER_ADMIN_REQUEST_RENT);
+                    $i = 1;
+                    foreach ($provider_class1 as $provider_class2) {
+                    	$provider_class[$i] = $provider_class2;
+                    	$i++;
+                    }
+                    
+                    ?>
+                       <select name="hregion" id="hregion" onchange="getCities(value)">
                             <option value="north" <?php if($row->hregion == 'north') echo 'selected'?>>North & Porto</option>
                             <option value="center" <?php if($row->hregion == 'center') echo 'selected'?>>Center & Silver Coast</option>
                             <option value="lisbon" <?php if($row->hregion == 'lisbon') echo 'selected'?>>Lisbon Coast</option>
@@ -2616,12 +2666,33 @@ static function edit_review($option, $house_id, $review) {
                             <option value="algarve" <?php if($row->hregion == 'algarve') echo 'selected'?>>Algarve</option>
                             <option value="madeira" <?php if($row->hregion == 'madeira') echo 'selected'?>>Madeira</option>
                         </select>
+                        
                         <!--<input class="inputbox" type="text" id="hregion" name="hregion" size="80" value="<?php echo $row->hregion; ?>" />-->
                         <input class="hidden" type="text" id="hzipcode" name="hzipcode" size="80" value="" />
                     </td>
                 </tr>
                 <tr>
-                    <td valign="top"><?php echo _REALESTATE_MANAGER_LABEL_CITY; ?>:</td>
+                	<!--  CIDADE: dropdown de cidades por região -->
+                	<td valign="top"><?php echo _REALESTATE_MANAGER_LABEL_CITY; ?>:</td>
+                    
+                    <td align="left">
+                    	<select name="hcity" id="hcity">
+	                		<option value="" selected default><?php echo _REALESTATE_MANAGER_ALL_CITIES; ?></option>
+	                    	<?php for($i=0; $i<count($cities); $i++){
+	                            	if($cities[$i]->hcity != ''){?> 
+	                                	<option value="<?php echo $cities[$i]->hcity; ?>" <?php if($row->hcity == $cities[$i]->hcity) echo 'selected'; ?>><?php echo $cities[$i]->hcity; ?></option>
+		                     <?php  }} ?>
+	                    </select>
+	                </td>
+                </tr>
+                <!-- CIDADE: nova cidade a adicionar 
+                <tr>
+                	<td valign="top"><?php echo " New city? "; ?>&nbsp;<input type="checkbox" id="myCheck" onclick="check()"></td>
+                </tr>
+                -->
+                <tr id="bo-newcity">
+                	<!-- CIDADE: nova cidade a adicionar --> 
+                	<td valign="top"><?php echo "New city? Please write city name"; ?>:</td>
                     <td align="left"><input class="inputbox" type="text" id="hcity" name="hcity" size="80" value="<?php echo $row->hcity; ?>" /></td>
                 </tr>
                 <!--<tr>
@@ -2809,13 +2880,15 @@ static function edit_review($option, $house_id, $review) {
                 $tabs->endTab();
                 $tabs->endPane();
             }
+            
+            
             ?>
-
+ 			
             <input type="hidden" name="id" value="<?php echo $row->id; ?>" />
             <input type="hidden" name="owner_id" value="<?php echo $row->owner_id; ?>" />
             <input type="hidden" name="option" value="<?php echo $option; ?>" />
             <input type="hidden" name="boxchecked" value="0" />
-            <input type="hidden" name="task" value="" />				
+            <input type="hidden" name="task" value="" />		
         </form>
         <!--************************   end change review ***********************-->
         <?php
@@ -3163,6 +3236,7 @@ static function editRentHouses($option, $house1, $rows, $title_assoc, & $userlis
         $html = "<div class='house_manager_caption' ><img src='./components/com_realestatemanager/images/building_icon.jpg' alt ='Config' /> " . _REALESTATE_MANAGER_ADMIN_CONFIG . "</div>";
         $app = JFactory::getApplication();
         $app->JComponentTitle = $html;
+        
         ?>
         <div id="overDiv" style="position:absolute; visibility:hidden; z-index:10000;"></div>
         <script>
@@ -3748,6 +3822,7 @@ static function editRentHouses($option, $house1, $rows, $title_assoc, & $userlis
                     </td>
                 </tr>
             </table>
+            <?php echo ":::::: ".$row->id; ?>
             <input type="hidden" name="const" value="<?php echo $lists['const']; ?>"/>
             <input type="hidden" name="option" value="com_realestatemanager" />
             <input type="hidden" name="section" value="language_manager" />
