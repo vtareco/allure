@@ -158,7 +158,7 @@
             <!------------------------------------------------------------ SEARCH ---------------------------------------------------------->
             <div class="allure-background-gray">
 	            <?php $active = JFactory::getApplication()->getMenu()->getActive();?>
-	            <div id="search" class="<?php echo $active->alias; ?>-search ">
+	            <div id="search" class="<?php echo $active->alias;?>-search <?php if($active->alias !== 'fr-home' && $active->alias !== 'en-home') { echo 'hideandshowmenu'; } ?>">
 	                   <?php if($this->countModules('search')) : ?>
 	                         <jdoc:include type="modules" name="search" style="block" />
 	                   <?php endif; ?>
@@ -237,7 +237,7 @@
             <!----------------------------------------------------------- CONTENT ---------------------------------------------------------->
             <!----------------------------------------------------------- CONTENT ---------------------------------------------------------->
             <!----------------------------------------------------------- CONTENT ---------------------------------------------------------->
-            <div class="container <?php echo str_replace("/","", $_SERVER['REQUEST_URI']) ?>">
+            <div class="container <?php echo str_replace("/","", $_SERVER['REQUEST_URI']) ?> espacolateralcontainer">
                <div class="allureContainer">
                   <?php if($this->countModules('breadcrumbs')) : ?>
                         <div id="breadcrumbs">        
@@ -453,8 +453,10 @@
             <!----------------------------------------------------------- SCRIPTS ----------------------------------------------------------->
             <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bootstrap.min.js"></script>
             <script type="text/javascript">
-                  (function($){
+            
+                  (function($){                  
                         $(document).ready(function(){
+                        
                         	  var resizeClick =0;
                               if ($('.parent').children('ul').length > 0) {
                                     $('.parent').addClass('dropdown');
@@ -905,9 +907,201 @@
                         });
                         
                         
-                        
-                        
+                      //Recolher os Menus  
+                      if($(window).width() < 600){
+					 	$( "#showmenu1").removeClass( "hideButton" );
+	                    $( "#showmenu2").removeClass( "hideButton" );	
+	                    
+	                    $('#search_villa #search-area-lightOrange').slideToggle("fast");
+	                    $('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");
+	                    
+					 	$(document).ready(function() {
+							$('#searchvilla-searchbook').click(function() {
+						            $('#search_villa #search-area-lightOrange').slideToggle("fast");
+						            
+						            $("#showmenu1").text(function(i, text){
+							            return text === "[ - ]" ? "[ + ]" : "[ - ]";
+							        });
+						        });
+						    });
+						    
+						    $(document).ready(function() {
+						        $('.title-search-facilities').click(function() {
+						            $('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");
+						            $("#showmenu2").text(function(i, text){
+							            return text === "[ - ]" ? "[ + ]" : "[ - ]";
+							        });
+						        });
+						    });
+						    
+						    
+						$('#for_sale #search-area-lightOrange').slideToggle("fast");  
+	                    $('#best_of #search-area-lightOrange').slideToggle("fast");
+	                    
+	                    var searchtitle  = $('.hideandshowmenu .com_realestatemanagerhome_search:not(#search.en-home-search )');
+	                    searchtitle.slideToggle("fast");    
+	                    
+	                    var searchsearch = $('.hideandshowmenu #title-search:not(#search.en-home-search )');
+	                    searchsearch.html(function() {
+	                    	if (window.location.href.indexOf('/fr/')!=-1) {
+			                    return "Cherche & Reserve <div id='showmenu1'>[ + ]</div>";
+							}else{
+								return "Search & book <div id='showmenu1'>[ + ]</div>";
+						   	}
+						}); 
+						
+						var bestofforsale = $('.bestof-forsale');
+	                    bestofforsale.html(function() {
+	                    	if (window.location.href.indexOf('/fr/')!=-1) {
+			                    return "Cherche & Reserve <div id='showmenu1'>[ + ]</div>";
+							}else{
+								return "Search & book <div id='showmenu1'>[ + ]</div>";
+							}
+						});  
+						
+						var showmenu1 = $("#showmenu1");                                            
+	                                       
+					 	$(document).ready(function() {
+							bestofforsale.click(function() {
+						        $('#for_sale #search-area-lightOrange').slideToggle("fast");	
+						        $('#best_of #search-area-lightOrange').slideToggle("fast"); 
+						        
+						        showmenu1.text(function(i, text){
+							    	return text === "[ - ]" ? "[ + ]" : "[ - ]";
+							    });			            					 
+						    });
+						    
+						    searchsearch.click(function() {
+						        searchtitle.slideToggle("fast"); 				        					        
+						     				        				     
+						        showmenu1.text(function(i, text){
+							    	return text === "[ - ]" ? "[ + ]" : "[ - ]";
+							    });          					 
+						    });					    					   					  
+						});
+		    
+					 }else{
+						 $( "#showmenu1").addClass( "hideButton" );
+	                     $( "#showmenu2").addClass( "hideButton" );
+					 }
+						
+						
+						// Find matches
+				  var mql = window.matchMedia("(orientation: portrait)");
+					
+				   // If there are matches, we're in portrait
+				   if(mql.matches) {  				        						
+						 console.log("Portrait orientation");
+				   } else {
+				   	  if($(window).width() < 767){ 
+				   		/*$( "#showmenu1").removeClass( "hideButton" );
+	                    $( "#showmenu2").removeClass( "hideButton" );			        
+						$('#search_villa #search-area-lightOrange').slideToggle("fast");
+			            $('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");*/
+			            
+			            $(document).ready(function() {
+							$('#searchvilla-searchbook').click(function() {
+						            $('#search_villa #search-area-lightOrange').slideToggle("fast");
+						            
+						            $("#showmenu1").text(function(i, text){
+							            return text === "[ - ]" ? "[ + ]" : "[ - ]";
+							        });
+						        });
+						    });
+						    
+						    $(document).ready(function() {
+						        $('.title-search-facilities').click(function() {
+						            $('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");
+						            $("#showmenu2").text(function(i, text){
+							            return text === "[ - ]" ? "[ + ]" : "[ - ]";
+							        });
+						        });
+						    });
+						    
+						    
+						    $(document).ready(function() {
+								$('.bestof-forsale').click(function() {
+						        	$('#for_sale #search-area-lightOrange').slideToggle("fast");	
+						        	$('#best_of #search-area-lightOrange').slideToggle("fast"); 
+			            		});			 
+						    });
+						    
+						//$('#for_sale #search-area-lightOrange').slideToggle("fast");  
+	                    //$('#best_of #search-area-lightOrange').slideToggle("fast");
+	                    
+	                 }
+			       }
+					
+				   // Add a media query change listener
+				   mql.addListener(function(m) {
+				   		if(m.matches) {
+							 if($(window).width() < 600){   
+			                    var searchtitle  = $('.hideandshowmenu .com_realestatemanagerhome_search:not(#search.en-home-search )');
+			                    searchtitle.slideToggle("fast");    
+			                    
+			                    var searchsearch = $('.hideandshowmenu #title-search:not(#search.en-home-search )');
+			                    searchsearch.html(function() {
+			                    	if (window.location.href.indexOf('/fr/')!=-1) {
+			                        	return "Cherche & Reserve <div id='showmenu1'>[ + ]</div>";
+							    	}else{
+								    	return "Search & book <div id='showmenu1'>[ + ]</div>";
+							    	}
+								}); 
+								
+								var bestofforsale = $('.bestof-forsale');
+			                    bestofforsale.html(function() {
+			                    	if (window.location.href.indexOf('/fr/')!=-1) {
+										return "Cherche & Reserve <div id='showmenu1'>[ + ]</div>";
+							    	}else{
+										return "Search & book <div id='showmenu1'>[ + ]</div>";
+							    	}
+								});                                            
+			                                       
+							 	$(document).ready(function() {
+								    searchsearch.click(function() {
+								        searchtitle.slideToggle("fast"); 				        					        
+								     				        				     
+								        showmenu1.text(function(i, text){
+									    	return text === "[ - ]" ? "[ + ]" : "[ - ]";
+									    });          					 
+								    });					    					   					  
+								});
+								
+								$('#for_sale #search-area-lightOrange').slideToggle("fast");  
+								$('#best_of #search-area-lightOrange').slideToggle("fast");
+								
+								$('#search_villa #search-area-lightOrange').slideToggle("fast");
+								$('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");
+								
+								$( "#showmenu1").removeClass( "hideButton" );
+	                            $( "#showmenu2").removeClass( "hideButton" );	
+							 }
+							 
+						}else{
+						  	if($(window).width() < 767){ 
+								var searchtitle  = $('.hideandshowmenu .com_realestatemanagerhome_search:not(#search.en-home-search )');
+								searchtitle.slideToggle("fast");    
+			                    
+								$( "#title-search #showmenu1").addClass( "hideButton" );
+								$( "#title-search #showmenu2").addClass( "hideButton" );
+								$( "#showmenu1").addClass( "hideButton" );
+								$( "#showmenu2").addClass( "hideButton" );    
+								
+								$('#for_sale #search-area-lightOrange').slideToggle("fast");  
+								$('#best_of #search-area-lightOrange').slideToggle("fast");     
+								
+								$('#search_villa #search-area-lightOrange').slideToggle("fast");
+								$('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");     
+							}											 															 
+						}
+				   });
+				   			   			                       
+                                                            
                   })(jQuery);
+                  
+                                                                       
+                         
+                  
                   function openCloseMenu(){
                         var x = document.getElementById("menu-mobile");
                         if (x.style.display == "block"){
@@ -920,56 +1114,12 @@
                               obj.style.top = "604px";
                         }
                   }
-                  
-                 /* $( window ).bind("resize", function(){             	                     
-		          		 if ($(window).width() >= 767 ) {
-                      	  	$( "#showmenu1").addClass( "hideButton" );
-                      	  	$( "#showmenu2").addClass( "hideButton" );	
-                      	  	
-                      	  	$('#search_villa #search-area-lightOrange').show();
-                      	  	$('#search_villa #search-area-darkOrange .col_text_2').show();
-                      	 }	
-                      	 else{
-	                      	$( "#showmenu1").removeClass( "hideButton" );
-                      	  	$( "#showmenu2").removeClass( "hideButton" );	
-                      	  	
-                      	  	$('#search_villa #search-area-lightOrange').hide();
-                      	  	$('#search_villa #search-area-darkOrange .col_text_2').hide();
-                      	 }		      
-                  });*/
-                  
-                 				 
-				 if ($(window).width() < 767) {
-				 	$( "#showmenu1").removeClass( "hideButton" );
-                    $( "#showmenu2").removeClass( "hideButton" );	
-                    
-                    $('#search_villa #search-area-lightOrange').slideToggle("fast");
-                    $('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");
-                    
-				 	$(document).ready(function() {
-						$('#searchvilla-searchbook').click(function() {
-					            $('#search_villa #search-area-lightOrange').slideToggle("fast");
-					            
-					            $("#showmenu1").text(function(i, text){
-						            return text === "[ - ]" ? "[ + ]" : "[ - ]";
-						        });
-					        });
-					    });
-					    
-					    $(document).ready(function() {
-					        $('.title-search-facilities').click(function() {
-					            $('#search_villa #search-area-darkOrange .col_text_2').slideToggle("fast");
-					            $("#showmenu2").text(function(i, text){
-						            return text === "[ - ]" ? "[ + ]" : "[ - ]";
-						        });
-					        });
-					    });
-				 }else{
-					 $( "#showmenu1").addClass( "hideButton" );
-                     $( "#showmenu2").addClass( "hideButton" );
-				 }
+                                                    				 
 				 
+				 				 
 				 
+				 	 
+				 	
             </script>
             <!----------------------------------------------------------- SCRIPTS ----------------------------------------------------------->
             <!----------------------------------------------------------- SCRIPTS ----------------------------------------------------------->

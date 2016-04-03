@@ -3064,7 +3064,7 @@ form#calendar>select {
   padding: 20px;
   background-color:#babab9;
   color:#fff !important;
-  font-size: 16.5px;
+  font-size: 14.5px;
 }
 #tabs table.ratecard td{
   padding: 20px;
@@ -6628,7 +6628,7 @@ ARRANJAR
     	font-size: 13px !important;
     }
     .containerTOPContainer-fr-home .searchvillamenu{
-    	font-size: 13px !important;
+    	font-size: 17px !important;
     	padding-top: 5px;
     }
     
@@ -6915,10 +6915,11 @@ ARRANJAR
 
 @media (min-width: 600px) and (max-width: 767px) {
 	#title-search.bestof-forsale {
-	    min-width: 216px !important;
+	    min-width: 265px !important;
 	    margin-bottom: -25px !important;
 	    margin-left: 0px !important;
 	}
+	
 }
 
 @media (min-width: 767px) and (max-width: 979px) {
@@ -6947,7 +6948,8 @@ ARRANJAR
 @media (min-width: 600px) and (max-width: 1200px) {
 	.allurevillassearch_villa,
 	.allurevillasbest_of,
-	.allurevillasfor_sale{
+	.allurevillasfor_sale,
+	.espacolateralcontainer{
 		padding-left:21px !important;
 	}
 }
@@ -6957,6 +6959,96 @@ ARRANJAR
 		display:inline-block !important;
 	}
 }
+@media (min-width: 770px) and (max-width: 1200px) {
+	#gallery_blocks_rem .okno_R td img{
+		width: auto !important;
+    }
+}
+
+@media (min-width: 978px){
+	#house_basic_details .col_text_1 img{
+		width:18px;
+	}
+	#house_basic_details .col_text_2{
+		font-size:11px;
+	}
+}
+
+@media (max-width: 600px) and (min-width: 0px){
+	#title-search.bestof-forsale,
+	.hideandshowmenu #title-search{
+	    padding-left: 20px;
+	    padding-top: 16px;
+	    color: #fff !important;
+	    font-weight: 600;
+	    text-transform: uppercase;
+	    cursor: default !important;
+	    letter-spacing: 0.9;
+	    padding-right: 26px;
+	    display: block;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    -o-text-overflow: ellipsis;
+	    -ms-text-overflow: ellipsis;
+	    text-overflow: ellipsis;
+	    padding-bottom: 16px;
+	    font-size: 17px !important;
+	    font-family: "Lato",sans-serif !important;
+	    font-weight: 400 !important;
+	    height: 50px !important;
+	    margin-top: -13px;
+	    margin-bottom: 0px !important;
+	    border-top-left-radius: 0px !important;
+	    border-top-right-radius: 0px !important;
+	    z-index:10000;
+	    width: 70%;
+	}
+	
+	
+	.blog-featured .item-title, .blog .item-title, .page-header {
+    	margin-top: 100px !important;
+    }
+	
+	/*.areainformation-search #title-search,
+	.extraservices-search  #title-search {
+		margin-bottom: 85px !important;
+	}*/
+	
+}
+
+@media (min-width: 768px) and (max-width: 1025px){
+	#spotlight #gallery_blocks_rem .okno_R{
+	  	width: auto !important;
+	}
+	
+	#spotlight #gallery_blocks_rem {
+    	margin-left: 10px;
+    }
+
+}
+@media (min-width: 978px) and (max-width: 1199px){
+    #feature.en-home-features,
+    #feature.fr-home-features{
+    	margin-top: 0px !important;
+	    margin-bottom: 0px !important;
+	}
+	
+	#spotlight {
+    	margin-bottom: -180px;
+    }
+    
+    #ShowOrderBy>form>select {
+    	margin-left: 25px;
+    }
+    
+    #searchIconsBar {
+    	margin-right: 15px;
+    }
+    #pagenavig-top ul {
+    	margin-right: -52px;
+    }
+}
+
 /***************************************>Alterações para mobile ************************************/
 /***************************************>Alterações para mobile ************************************/
 /***************************************>Alterações para mobile ************************************/

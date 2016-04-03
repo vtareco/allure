@@ -330,7 +330,7 @@ $dispatcher = JDispatcher::getInstance();
             
             ?>
         <!-- / Changeover day 16:00 -->
-        <p class="house-text-desc">
+        <p> <!-- class="house-text-desc" -->
         	Check-in: <?php echo $house->extra7; ?>h, 
         	Check-out:<?php echo $house->extra8; ?>h
         </p>
