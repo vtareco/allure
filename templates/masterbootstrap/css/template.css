@@ -3064,7 +3064,7 @@ form#calendar>select {
   padding: 20px;
   background-color:#babab9;
   color:#fff !important;
-  font-size: 14.5px;
+  font-size: 16.5px;
 }
 #tabs table.ratecard td{
   padding: 20px;
@@ -7049,6 +7049,12 @@ ARRANJAR
     }
 }
 
+/* iphone diminuir tamanho letra tabela precos de sessao VMT 05-04-2016 */
+@media (min-width: 300px) and (max-width: 550px){
+    #tabs table.ratecard th{
+  		font-size: 10.8px;
+	}
+}
 /***************************************>Alterações para mobile ************************************/
 /***************************************>Alterações para mobile ************************************/
 /***************************************>Alterações para mobile ************************************/
