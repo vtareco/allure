@@ -2129,8 +2129,9 @@ form#login-form {
   margin-bottom: 35px;
 }
 #ShowOrderBy>form{
-  width: 60%;
-  float: left;
+  /*width: 60%;
+  float: left;*/
+  width: 1;
   color: #1b1b1b;
   font-size: 12px;
   text-align: left;
@@ -3064,7 +3065,7 @@ form#calendar>select {
   padding: 20px;
   background-color:#babab9;
   color:#fff !important;
-  font-size: 16.5px;
+  font-size: 14.5px; 
 }
 #tabs table.ratecard td{
   padding: 20px;
@@ -4588,7 +4589,7 @@ table#links_table_style td {
 	  display: block;
 	  position:absolute;
 	  top: 42px;
-	  left: 28.5%;
+	  left: 25.5%; 
 	}
 	#header-central-messages ul li{
 	  font-family:"Lato",sans-serif;
@@ -6411,6 +6412,10 @@ ARRANJAR
     	height: 46px !important;
     	margin-top: -5px;
     }
+    
+    .mobile-hidden {
+      display: none;
+    }
 }
 
 @media (min-width: 0px) and (max-width: 768px) {
@@ -7053,6 +7058,11 @@ ARRANJAR
 @media (min-width: 300px) and (max-width: 550px){
     #tabs table.ratecard th{
   		font-size: 10.8px;
+	}
+	
+	/* diminuir data na tabela*/
+	#tabs table.ratecard td {
+    	font-size: 7px;
 	}
 }
 /***************************************>Alterações para mobile ************************************/

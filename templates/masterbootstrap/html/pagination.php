@@ -220,7 +220,17 @@ function pagination_item_active(&$item)
 		//echo $item->link."<br>";
 		$item->link = "#";
 	}
-	return "<li><a title=\"" . $item->text . "\" data-limit=\"12\" data-limitstart=\"".$item->base."\" href=\"" . $item->link . "\" class=\"pagenav\">" . $item->text . "</a><li>";
+	
+	$currentPage = $_REQUEST['limitstart']+1;
+	$page = ($item->base / 12) +1;
+	
+	if($item->text != 'Start' && $item->text != 'Prev' && $item->text != 'Next' && $item->text != 'End' && $currentPage != $page){
+		$isMobile = "mobile-hidden";
+	}else{
+		$isMobile = "";
+	}
+	
+	return "<li><a title=\"" . $item->text . "\" data-limit=\"12\" data-limitstart=\"".$item->base."\" href=\"" . $item->link . "\" class=\"pagenav ". $isMobile ."\">" . $item->text . "</a><li>";
 }
 
 /**
