@@ -7062,7 +7062,221 @@ ARRANJAR
 	
 	/* diminuir data na tabela*/
 	#tabs table.ratecard td {
-    	font-size: 7px;
+    	font-size: 8px; 
+	}
+}
+@media (min-width: 1023px) and (max-width: 1070px){	
+	#gallery_blocks_rem .okno_R td img {
+    	width: auto !important;
+    	height: 165px !important;
+    }
+    
+    .inner-spotlight-image img {
+    	width: auto!important;
+    	height: auto !important;
+    	max-height: 100px !important;
+    	min-height: 93px;
+    }
+    
+    #inner-spotlight {
+    	height: 150px;
+    }
+    
+    #house_basic_details .col_text_2 {
+    	margin-right: 4px;
+    }
+}
+
+@media (min-width:768px) and (max-width: 900px){
+	.feature-home-btn {
+    	margin-left: 16.6px;
+    	margin-right: 10.6px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){	
+	#navigation.fr-FR-navigation .navbar-default .navbar-nav>li>a {
+	    font-size: 12px;
+	}
+}
+@media (min-width: 768px) and (max-width: 1200px){	
+	#mainCoroussel{
+	  -webkit-animation: anim 5s 1;
+	  /*animation: anim 3s 1;*/
+	}
+	@-moz-document url-prefix() {
+		#mainCoroussel{
+	  		animation: anim 4.73s ease 0s infinite normal;
+	  	}
+	  } 
+	@-webkit-keyframes anim {
+	  0% {
+	    -ms-transform: translateX(-50%);
+	  	-webkit-transform: translateX(-50%);
+	  	-moz-transform: translateX(-50%);
+	  	-o-transform: translateX(-50%);
+	  	transform: translateX(-50%);
+	    opacity: 0;
+	  }
+	  80% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	  100% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	}
+	@-moz-keyframes anim {
+	  0% {
+	    -ms-transform: translateX(-50%);
+	  	-webkit-transform: translateX(-50%);
+	  	-moz-transform: translateX(-50%);
+	  	-o-transform: translateX(-50%);
+	  	transform: translateX(-50%);
+	    opacity: 0;
+	  }
+	  80% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	  100% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	}
+    @-ms-keyframes anim {
+	  0% {
+	  	-ms-transform: translateX(-50%);
+	  	-webkit-transform: translateX(-50%);
+	  	-moz-transform: translateX(-50%);
+	  	-o-transform: translateX(-50%);
+	  	transform: translateX(-50%);
+	    opacity: 0;
+	  }
+	  80% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	  100% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	}
+
+    
+    @-o-keyframes anim {
+	  0% {
+	    -ms-transform: translateX(-50%);
+	  	-webkit-transform: translateX(-50%);
+	  	-moz-transform: translateX(-50%);
+	  	-o-transform: translateX(-50%);
+	  	transform: translateX(-50%);
+	    opacity: 0;
+	  }
+	  80% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	  100% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	}
+	@keyframes anim {
+	  0% {
+	    -ms-transform: translateX(-50%);
+	  	-webkit-transform: translateX(-50%);
+	  	-moz-transform: translateX(-50%);
+	  	-o-transform: translateX(-50%);
+	  	transform: translateX(-50%);
+	    opacity: 0;
+	  }
+	  80% {
+	  	-ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	  100% {
+	    -ms-transform: translateX(0%);
+	  	-webkit-transform: translateX(0%);
+	  	-moz-transform: translateX(0%);
+	  	-o-transform: translateX(0%);
+	  	transform: translateX(0%);
+	    opacity: 1;
+	  }
+	}
+	
+	@-moz-document url-prefix() {
+		@keyframes anim {
+		  0% {
+		    -ms-transform: translateX(-50%);
+		  	-webkit-transform: translateX(-50%);
+		  	-moz-transform: translateX(-50%);
+		  	-o-transform: translateX(-50%);
+		  	transform: translateX(-50%);
+		    opacity: 0;
+		  }
+		  50% {
+		  	-ms-transform: translateX(0%);
+		  	-webkit-transform: translateX(0%);
+		  	-moz-transform: translateX(0%);
+		  	-o-transform: translateX(0%);
+		  	transform: translateX(0%);
+		    opacity: 1;
+		  }
+		  80% {
+		  	-ms-transform: translateX(0%);
+		  	-webkit-transform: translateX(0%);
+		  	-moz-transform: translateX(0%);
+		  	-o-transform: translateX(0%);
+		  	transform: translateX(0%);
+		    opacity: 1;
+		  }
+		  100% {
+		    -ms-transform: translateX(0%);
+		    -webkit-transform: translateX(0%);
+		    -moz-transform: translateX(0%);
+		    -o-transform: translateX(0%);
+		    transform: translateX(0%);
+		    opacity: 0;
+		  }
+	   }
 	}
 }
 /***************************************>Alterações para mobile ************************************/
