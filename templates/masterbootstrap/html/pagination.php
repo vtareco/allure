@@ -224,7 +224,7 @@ function pagination_item_active(&$item)
 	$currentPage = $_REQUEST['limitstart']+1;
 	$page = ($item->base / 12) +1;
 	
-	if($item->text != 'Start' && $item->text != 'Prev' && $item->text != 'Next' && $item->text != 'End' && $currentPage != $page){
+	if($item->text != 'Start' && $item->text != 'Début' && $item->text != 'Prev' && $item->text != 'Précédent' && $item->text != 'Next' && $item->text != 'Suivant' && $item->text != 'End' && $item->text != 'Fin' && $currentPage != $page){
 		$isMobile = "mobile-hidden";
 	}else{
 		$isMobile = "";
