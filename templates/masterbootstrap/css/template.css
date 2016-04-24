@@ -6406,6 +6406,46 @@ ARRANJAR
 /***************************************>Alterções para mobile ************************************/
 
 /**********Mobile Homepage: logo distorcido*************/
+
+@media (min-width:320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .mobile-hidden {
+      display: none;
+    }
+}
+@media (min-width:481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .mobile-hidden {
+      display: none;
+    }
+}
+@media (min-width:641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .mobile-hidden {
+      display: none;
+    }
+}
+@media (min-width:961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .mobile-hidden {
+      display: none;
+    }
+}
+
+@media (min-width:1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  .mobile-hidden {
+      display: inline-block;
+    }
+}
+@media (min-width:1281px) {
+  /* hi-res laptops and desktops */
+  .mobile-hidden {
+      display: inline-block;
+    }
+}
+
+
 @media (min-width: 0px) and (max-width: 768px) {
 	#header-top img {
     	
@@ -6413,9 +6453,6 @@ ARRANJAR
     	margin-top: -5px;
     }
     
-    .mobile-hidden {
-      display: none;
-    }
 }
 
 @media (min-width: 0px) and (max-width: 768px) {
@@ -7043,7 +7080,7 @@ ARRANJAR
     }
     
     #ShowOrderBy>form>select {
-    	margin-left: 25px;
+    	margin-left: 35px;
     }
     
     #searchIconsBar {
