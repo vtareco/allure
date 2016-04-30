@@ -5197,7 +5197,7 @@ table#links_table_style td {
 	.ppc_spotlight_image_desc{
 	  display:block !important;
 	  right: 240px;
-	  max-width: 400px; /* VMT diminuir banner no tablet/ipad 12-04-2016 */ 
+	  max-width: 450px; /* VMT diminuir banner no tablet/ipad 30-04-2016 */ 
 	  width: auto;
 	  height: 150px;
 	}
@@ -7324,6 +7324,13 @@ ARRANJAR
 	}
 	
 	#linksIMGinsurance{
+		width:65%;
+	}
+}
+
+/* rodent */
+@media  (min-width: 400px) and (max-width: 750px){
+	#rodent{
 		width:65%;
 	}
 }
