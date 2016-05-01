@@ -203,7 +203,8 @@ else {
             break;
 
         case "edit":
-            editHouse($option, array_pop($bid));
+        //	echo "enter: ".$bid;
+        	editHouse($option, array_pop($bid));
             break;
         
         case "ajax_rent_price":             
@@ -1767,9 +1768,16 @@ function rentPrice($bid,$rent_from,$rent_until,$special_price,$comment_price,$cu
     rentPriceREM($bid,$rent_from,$rent_until,$special_price,$comment_price,$currency_spacial_price);
 }
 
+/**
+ * Edit villa/house
+ * @param unknown $option
+ * @param unknown $bid
+ */
 function editHouse($option, $bid) {
     global $database, $my, $mosConfig_live_site, $realestatemanager_configuration;
 
+  //  echo "id ---> ".$bid;
+    
     $house = new mosRealEstateManager($database);
     // load the row from the db table
     $house->load(intval($bid));
@@ -1807,6 +1815,8 @@ function editHouse($option, $bid) {
         $query = "SELECT id,language,htitle FROM `#__rem_houses` WHERE 1 and  owner_id = " . $userid . "";
         $database->setQuery($query);
         $allhouse =  $database->loadObjectlist(); 
+        
+        //echo "house id ---> ".$house->id;
   
         $query = "select associate_house from #__rem_houses where id =".$house->id;
         $database->setQuery($query);
@@ -2017,7 +2027,7 @@ function editHouse($option, $bid) {
         $house_rent_sal = $database->loadObjectList();
        
     }
-
+    
     $query = "SELECT * ";
     $query .= "FROM #__rem_feature as f ";
     $query .= "WHERE f.published = 1 ";
@@ -2213,7 +2223,7 @@ function picture_thumbnail($file, $high_original, $width_original) {
 
     // Creating the Canvas
     $tn = imagecreatetruecolor($w_, $h_);
-
+    
     switch (strtolower($file_type)) {
         case '.png':
             $source = imagecreatefrompng($mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file);
@@ -2221,16 +2231,25 @@ function picture_thumbnail($file, $high_original, $width_original) {
             imagepng($tn, $mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file_name . $size . $file_type);
             break;
         case '.jpg':
-            $source = imagecreatefromjpeg($mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file);
-            $file = imagecopyresampled($tn, $source, 0, 0, 0, 0, $w_, $h_, $width, $height);
-            imagejpeg($tn, $mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file_name . $size . $file_type);
+        //	echo "FILE: ".$file;
+        	$source = imagecreatefromjpeg($mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file);
+        	if($tn != '' && $source != ''){
+        		//echo " source: ".$source;
+            	$file = imagecopyresampled($tn, $source, 0, 0, 0, 0, $w_, $h_, $width, $height);
+            	// echo " file: ".$file;
+            	imagejpeg($tn, $mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file_name . $size . $file_type);
+        	}
+        	
             break;
         case '.jpeg':
-            $source = imagecreatefromjpeg($mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file);
-            $file = imagecopyresampled($tn, $source, 0, 0, 0, 0, $w_, $h_, $width, $height);
-            imagejpeg($tn, $mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file_name . $size . $file_type);
-
-            break;
+        //	echo "FILE: ".$file;
+        	$source = imagecreatefromjpeg($mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file);
+        	if($tn != '' && $source != ''){
+        		$file = imagecopyresampled($tn, $source, 0, 0, 0, 0, $w_, $h_, $width, $height);
+        		imagejpeg($tn, $mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file_name . $size . $file_type);
+        	}
+        	
+			break;
         case '.gif':
             $source = imagecreatefromgif($mosConfig_absolute_path . '/components/com_realestatemanager/photos/' . $file);
             $file = imagecopyresampled($tn, $source, 0, 0, 0, 0, $w_, $h_, $width, $height);
@@ -2890,8 +2909,8 @@ function cloneHouse($bid,$option) {
 	// nao existem ids iguais
 	for($i = 0; $i < count($rentrequest); $i++){
 		//echo "--> ".$rentrequest[$i]->id;
-		if($rentrequest[$i]->id == $newHouseID){
-			$newHouseID += $newHouseID;
+		if($rentrequest[$i]->id == $newHouseID ){
+			$newHouseID += 53;
 			$i = 0;
 		}
 	}
@@ -2901,16 +2920,15 @@ function cloneHouse($bid,$option) {
 			" price_low_season, price_high_season, listing_type, price, htitle, hcountry, hregion, hcity,hlocation, ".
 			" hlatitude, hlongitude, map_zoom, bathrooms, bedrooms, broker,listing_status, property_type, provider_class,agent, ".
 			" area,lot_size, property_taxes,style, zoning, checked_out, checked_out_time, ordering, date, hits, published, ".
-			" approved,extra1, extra2, extra3,extra6, extra7, extra8, language, owner_id ) ".
+			" approved,extra1, extra2, extra3,extra6, extra7, extra8, language, owner_id, availability_tab_info, availability_tab_info_fr ) ".
 			" SELECT $newHouseID, asset_id, 'COPY', catid, sid, fk_rentid, associate_house, description, description_fr, ".
 			" price_low_season, price_high_season, listing_type, price, CONCAT('COPY OF ', htitle), ".
 			" hcountry, hregion, hcity,hlocation, hlatitude, hlongitude, map_zoom, bathrooms, bedrooms, broker,listing_status, ".
 			" property_type, provider_class,agent, area,lot_size, property_taxes,style, zoning, checked_out, checked_out_time, ".
-			" ordering, date, hits, 0, approved,extra1, extra2, extra3,extra6, extra7, extra8, language, owner_id ".
+			" ordering, date, hits, 0, approved,extra1, extra2, extra3,extra6, extra7, extra8, language, owner_id, availability_tab_info, availability_tab_info_fr ".
 			" FROM #__rem_houses ".
 			" WHERE id IN ($bids) AND (checked_out=0 OR (checked_out='$my->id'))");
-	
-	
+		
 	if (!$database->query()) {
 		echo "<script> alert('" . addslashes($database->getErrorMsg()) . "'); window.history.go(-1); </script>\n";
 		exit();
