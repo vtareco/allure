@@ -70,7 +70,7 @@ HTML_realestatemanager::showCrumbs($task);
 	                        options.html(''); // fr toutes les villes
                                 options.append($("<option />").val("").text("<?php echo _REALESTATE_MANAGER_ALL_CITIES; ?>").attr("default", "default").attr("selected", "selected"));
 	                        $.each(cities, function() {
-	                   //         console.log(this.hcity);
+	                            //console.log(this.hcity);
 	                            options.append($("<option />").val(this.hcity).text(this.hcity));
 	                        });
 	                    });
@@ -229,7 +229,7 @@ HTML_realestatemanager::showCrumbs($task);
 		    $("#ShowOrderBy").html($(data).find("#ShowOrderBy").html());
 		}
 		
-		console.log("New search");
+	//	console.log("New search");
 		
                 if ($(data).find("#fast_search").html() === undefined) {
                     $("#fast_search").htm("");
@@ -275,18 +275,18 @@ HTML_realestatemanager::showCrumbs($task);
     
     function changeList(type) {
         (function($){
-     //       console.log('-------------->'+type);
+    //        console.log('-------------->'+type);
             $old = $currentList;
             $old.removeClass("current-search-list");
             $old.fadeOut();
             if (type == "MAP") {
-   //             console.log('NO MAPA!!!!');
+  //              console.log('NO MAPA!!!!');
                 $newList = $("#map_canvas");
                 $("div#ShowOrderBy").hide();
                 $("div.page_navigation").hide();
                 
             }else if (type == "TABLE") {
-      //          console.log('NA TABLE!!!!');
+     //           console.log('NA TABLE!!!!');
                 $newList = $("#gallery_blocks_rem");
                 $("div#ShowOrderBy").show();
                 $("div.page_navigation").show();
@@ -322,7 +322,7 @@ HTML_realestatemanager::showCrumbs($task);
     }
     function hideLoading() {
             (function($){
-       //         console.log($currentList.attr('id'));
+      //          console.log($currentList.attr('id'));
                 if ($currentList.attr('id') != 'map_canvas') {
                     $("div#ShowOrderBy").show();
                     $("div.page_navigation").show();
@@ -407,10 +407,10 @@ HTML_realestatemanager::showCrumbs($task);
                     $("input[name='limit']").attr('value', $(this).attr('data-limit'));
 		    var limitstart = parseInt($(this).attr('data-limitstart'));
                     $("input[name='limitstart']").attr('value', limitstart);
-		    event.preventDefault();
+		//    event.preventDefault();
                     var page=(limitstart/12)+1;
-            //        console.log('limitstart->'+limitstart);
-            //        console.log('page->'+page); 
+    //                console.log('limitstart->'+limitstart);
+    //                console.log('page->'+page); 
 		    window.location.hash = '#showResult&p='+page;
                     //submitForm();
                 }

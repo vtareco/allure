@@ -145,7 +145,6 @@ else
 	    for(k=0; k<marker.length; k++){
 		marker[k].setMap(null);
 	    }
-	    console.log(marker);
             var bounds = new google.maps.LatLngBounds ();
             <?php
             $j = 0;
